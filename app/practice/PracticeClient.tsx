@@ -5,6 +5,8 @@ import { useMemo, useState } from "react";
 import { saveWrongQuestion } from "../../lib/takkenReviewStorage";
 import type { TakkenPracticeQuestion, TakkenPracticeYear } from "../../lib/takkenPractice";
 
+const RANDOM_PRACTICE_QUESTION_COUNT = 50;
+
 type PracticeClientProps = {
   practiceYears: TakkenPracticeYear[];
 };
@@ -13,6 +15,16 @@ type AnswerRecord = {
   qnum: number;
   selectedChoice: number;
   isCorrect: boolean;
+};
+
+type PracticeSession = {
+  mode: "year" | "random";
+  title: string;
+  resultLabel: string;
+  questionCount: number;
+  sourceQuestionCount: number;
+  questions: TakkenPracticeQuestion[];
+  year?: TakkenPracticeYear;
 };
 
 function getChoiceLabel(index: number) {
@@ -27,30 +39,89 @@ function getAccuracy(correctCount: number, answerCount: number) {
   return Math.round((correctCount / answerCount) * 100);
 }
 
+function shuffleQuestions(questions: TakkenPracticeQuestion[]) {
+  const shuffledQuestions = [...questions];
+
+  for (let index = shuffledQuestions.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffledQuestions[index], shuffledQuestions[randomIndex]] = [
+      shuffledQuestions[randomIndex],
+      shuffledQuestions[index],
+    ];
+  }
+
+  return shuffledQuestions;
+}
+
 export function PracticeClient({ practiceYears }: PracticeClientProps) {
-  const [selectedYear, setSelectedYear] = useState<TakkenPracticeYear | null>(null);
+  const [selectedSession, setSelectedSession] = useState<PracticeSession | null>(null);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [answerRecords, setAnswerRecords] = useState<AnswerRecord[]>([]);
   const [isFinished, setIsFinished] = useState(false);
 
-  const currentQuestion = selectedYear?.questions[questionIndex] ?? null;
+  const allPracticeQuestions = useMemo(
+    () => practiceYears.flatMap((year) => year.questions),
+    [practiceYears],
+  );
+  const randomQuestionCount = Math.min(RANDOM_PRACTICE_QUESTION_COUNT, allPracticeQuestions.length);
+  const currentQuestion = selectedSession?.questions[questionIndex] ?? null;
   const correctCount = useMemo(
     () => answerRecords.filter((record) => record.isCorrect).length,
     [answerRecords],
   );
   const wrongCount = answerRecords.length - correctCount;
 
-  function startPractice(year: TakkenPracticeYear) {
-    setSelectedYear(year);
+  function resetSession(session: PracticeSession) {
+    setSelectedSession(session);
     setQuestionIndex(0);
     setSelectedChoice(null);
     setAnswerRecords([]);
     setIsFinished(false);
   }
 
+  function startPractice(year: TakkenPracticeYear) {
+    resetSession({
+      mode: "year",
+      title: year.era,
+      resultLabel: `${year.era} / ${year.year}年`,
+      questionCount: year.questionCount,
+      sourceQuestionCount: year.questionCount,
+      questions: year.questions,
+      year,
+    });
+  }
+
+  function startRandomPractice() {
+    const questions = shuffleQuestions(allPracticeQuestions).slice(0, randomQuestionCount);
+
+    resetSession({
+      mode: "random",
+      title: "全年度ランダム50問",
+      resultLabel: "全年度ランダム50問",
+      questionCount: questions.length,
+      sourceQuestionCount: allPracticeQuestions.length,
+      questions,
+    });
+  }
+
+  function restartCurrentSession() {
+    if (!selectedSession) {
+      return;
+    }
+
+    if (selectedSession.mode === "random") {
+      startRandomPractice();
+      return;
+    }
+
+    if (selectedSession.year) {
+      startPractice(selectedSession.year);
+    }
+  }
+
   function returnToYearSelection() {
-    setSelectedYear(null);
+    setSelectedSession(null);
     setQuestionIndex(0);
     setSelectedChoice(null);
     setAnswerRecords([]);
@@ -64,8 +135,8 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
 
     setSelectedChoice(choiceNumber);
 
-    if (selectedYear && choiceNumber !== question.answer) {
-      saveWrongQuestion(selectedYear, question, choiceNumber);
+    if (choiceNumber !== question.answer) {
+      saveWrongQuestion({ era: question.era, year: question.year }, question, choiceNumber);
     }
 
     setAnswerRecords((records) => [
@@ -79,11 +150,11 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
   }
 
   function goToNextQuestion() {
-    if (!selectedYear) {
+    if (!selectedSession) {
       return;
     }
 
-    if (questionIndex >= selectedYear.questions.length - 1) {
+    if (questionIndex >= selectedSession.questions.length - 1) {
       setIsFinished(true);
       return;
     }
@@ -92,7 +163,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
     setSelectedChoice(null);
   }
 
-  if (!selectedYear) {
+  if (!selectedSession) {
     return (
       <article className="container practice-page">
         <div className="practice-hero">
@@ -100,11 +171,34 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
             <p className="eyebrow">Practice</p>
             <h1>宅建過去問演習</h1>
             <p>
-              年度を選んで、問1から問50まで順番に解けます。まずは演習する年度を選択してください。
+              年度別に問1から問50まで順番に解くか、収録済みの全年度からランダム50問を解けます。
             </p>
           </div>
-          <span className="status-badge">年度別順番演習</span>
+          <span className="status-badge">年度別順番演習 / ランダム演習</span>
         </div>
+
+        <section className="section-block" aria-labelledby="practice-random-heading">
+          <div className="section-heading compact-heading">
+            <p className="eyebrow">Random mode</p>
+            <h2 id="practice-random-heading">全年度ランダム演習</h2>
+          </div>
+
+          <section className="card practice-random-card">
+            <div className="practice-year-card-header">
+              <h3>全年度ランダム50問</h3>
+              <span>収録済み{allPracticeQuestions.length}問</span>
+            </div>
+            <p>収録済み{allPracticeQuestions.length}問からランダムに50問を出題します。</p>
+            <p>年度をまたいで実戦形式で確認できます。</p>
+            <button
+              className="button button-primary practice-start-button"
+              type="button"
+              onClick={startRandomPractice}
+            >
+              全年度ランダム50問を解く
+            </button>
+          </section>
+        </section>
 
         <section className="section-block" aria-labelledby="practice-year-heading">
           <div className="section-heading compact-heading">
@@ -146,11 +240,15 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
           <h1 id="practice-result-heading">演習結果</h1>
           <dl className="practice-result-list">
             <div>
-              <dt>演習年度</dt>
-              <dd>
-                {selectedYear.era} / {selectedYear.year}年
-              </dd>
+              <dt>演習モード</dt>
+              <dd>{selectedSession.resultLabel}</dd>
             </div>
+            {selectedSession.mode === "random" ? (
+              <div>
+                <dt>抽出元</dt>
+                <dd>収録済み{selectedSession.sourceQuestionCount}問</dd>
+              </div>
+            ) : null}
             <div>
               <dt>解答数</dt>
               <dd>{answerCount}問</dd>
@@ -174,8 +272,8 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
                 間違えた問題を復習する
               </Link>
             ) : null}
-            <button className="button button-secondary" type="button" onClick={() => startPractice(selectedYear)}>
-              同じ年度をもう一度解く
+            <button className="button button-secondary" type="button" onClick={restartCurrentSession}>
+              {selectedSession.mode === "random" ? "もう一度ランダム50問を解く" : "同じ年度をもう一度解く"}
             </button>
             <button className="button button-secondary" type="button" onClick={returnToYearSelection}>
               年度選択に戻る
@@ -210,10 +308,10 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
         <div>
           <p className="eyebrow">Question</p>
           <h1>
-            {selectedYear.era} 問{currentQuestion.qnum}
+            {selectedSession.title} 問{currentQuestion.qnum}
           </h1>
           <p>
-            進捗：{questionIndex + 1} / {selectedYear.questionCount}
+            進捗：{questionIndex + 1} / {selectedSession.questionCount}
           </p>
         </div>
         <button className="button button-secondary" type="button" onClick={returnToYearSelection}>
@@ -223,6 +321,8 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
 
       <section className="card practice-question-card" aria-labelledby="practice-question-heading">
         <div className="practice-meta-row">
+          <span>{currentQuestion.era}</span>
+          <span>問{currentQuestion.qnum}</span>
           <span>{currentQuestion.subject}</span>
           <span>{currentQuestion.topic}</span>
           {currentQuestion.isExemptionQuestion ? <span>登録講習免除対象問</span> : null}
@@ -269,7 +369,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
               正解番号：{currentQuestion.answer} / {answerChoiceText}
             </p>
             <button className="button button-primary" type="button" onClick={goToNextQuestion}>
-              {questionIndex >= selectedYear.questions.length - 1 ? "結果を見る" : "次の問題へ"}
+              {questionIndex >= selectedSession.questions.length - 1 ? "結果を見る" : "次の問題へ"}
             </button>
           </div>
         ) : null}

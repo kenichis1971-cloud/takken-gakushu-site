@@ -569,12 +569,17 @@ h3 {
   gap: 18px;
 }
 
+.practice-random-card,
 .practice-year-card {
   display: flex;
   min-height: 250px;
   flex-direction: column;
   justify-content: space-between;
   gap: 18px;
+}
+
+.practice-random-card {
+  margin-bottom: 24px;
 }
 
 .practice-year-card-header {

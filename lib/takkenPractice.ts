@@ -3,6 +3,8 @@ import questions2024 from "../data/takken/past/2024_questions.json";
 import questions2025 from "../data/takken/past/2025_questions.json";
 
 export type TakkenPracticeQuestion = {
+  year: number;
+  era: string;
   qnum: number;
   subject: string;
   topic: string;
@@ -47,8 +49,14 @@ const practiceQuestionSources: PracticeQuestionSource[] = [
   { data: questions2023, era: "令和5年度" },
 ];
 
-function normalizePracticeQuestion(question: RawTakkenPracticeQuestion): TakkenPracticeQuestion {
+function normalizePracticeQuestion(
+  question: RawTakkenPracticeQuestion,
+  year: number,
+  era: string,
+): TakkenPracticeQuestion {
   return {
+    year,
+    era,
     qnum: question.qnum,
     subject: question.subject ?? question.field ?? "未分類",
     topic: question.topic ?? "未分類",
@@ -62,7 +70,7 @@ function normalizePracticeQuestion(question: RawTakkenPracticeQuestion): TakkenP
 export function getTakkenPracticeYears(): TakkenPracticeYear[] {
   return practiceQuestionSources.map(({ data, era }) => {
     const questions = data.items
-      .map(normalizePracticeQuestion)
+      .map((question) => normalizePracticeQuestion(question, data.year, data.era ?? era))
       .sort((current, next) => current.qnum - next.qnum);
 
     return {
