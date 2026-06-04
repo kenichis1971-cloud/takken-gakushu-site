@@ -1,0 +1,758 @@
+{
+  "year": 2025,
+  "era": "令和7年度",
+  "exam": "宅地建物取引士資格試験",
+  "source_pdf": "宅建過去問R07.pdf",
+  "items": [
+    {
+      "qnum": 1,
+      "question": "令和7年度宅建士過去問 問1",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "権利関係",
+      "topic": "権利関係 問1",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 2,
+      "question": "令和7年度宅建士過去問 問2",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "権利関係",
+      "topic": "権利関係 問2",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 3,
+      "question": "令和7年度宅建士過去問 問3",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "権利関係",
+      "topic": "権利関係 問3",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 4,
+      "question": "令和7年度宅建士過去問 問4",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "権利関係",
+      "topic": "権利関係 問4",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 5,
+      "question": "令和7年度宅建士過去問 問5",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "権利関係",
+      "topic": "権利関係 問5",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 6,
+      "question": "令和7年度宅建士過去問 問6",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "権利関係",
+      "topic": "権利関係 問6",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 7,
+      "question": "令和7年度宅建士過去問 問7",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "権利関係",
+      "topic": "権利関係 問7",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 8,
+      "question": "令和7年度宅建士過去問 問8",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "権利関係",
+      "topic": "権利関係 問8",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 9,
+      "question": "令和7年度宅建士過去問 問9",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "権利関係",
+      "topic": "権利関係 問9",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 10,
+      "question": "令和7年度宅建士過去問 問10",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "権利関係",
+      "topic": "権利関係 問10",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 11,
+      "question": "令和7年度宅建士過去問 問11",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "権利関係",
+      "topic": "権利関係 問11",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 12,
+      "question": "令和7年度宅建士過去問 問12",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "権利関係",
+      "topic": "権利関係 問12",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 13,
+      "question": "令和7年度宅建士過去問 問13",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "権利関係",
+      "topic": "権利関係 問13",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 14,
+      "question": "令和7年度宅建士過去問 問14",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "権利関係",
+      "topic": "権利関係 問14",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 15,
+      "question": "令和7年度宅建士過去問 問15",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "法令制限",
+      "topic": "法令制限 問1",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 16,
+      "question": "令和7年度宅建士過去問 問16",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "法令制限",
+      "topic": "法令制限 問2",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 17,
+      "question": "令和7年度宅建士過去問 問17",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "法令制限",
+      "topic": "法令制限 問3",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 18,
+      "question": "令和7年度宅建士過去問 問18",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "法令制限",
+      "topic": "法令制限 問4",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 19,
+      "question": "令和7年度宅建士過去問 問19",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "法令制限",
+      "topic": "法令制限 問5",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 20,
+      "question": "令和7年度宅建士過去問 問20",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "法令制限",
+      "topic": "法令制限 問6",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 21,
+      "question": "令和7年度宅建士過去問 問21",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "法令制限",
+      "topic": "法令制限 問7",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 22,
+      "question": "令和7年度宅建士過去問 問22",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "法令制限",
+      "topic": "法令制限 問8",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 23,
+      "question": "令和7年度宅建士過去問 問23",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "税制",
+      "topic": "税制 問1",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 24,
+      "question": "令和7年度宅建士過去問 問24",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "税制",
+      "topic": "税制 問2",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 25,
+      "question": "令和7年度宅建士過去問 問25",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "価格評定",
+      "topic": "価格評定 問1",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 26,
+      "question": "令和7年度宅建士過去問 問26",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "宅建業法",
+      "topic": "宅建業法 問1",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 27,
+      "question": "令和7年度宅建士過去問 問27",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "宅建業法",
+      "topic": "宅建業法 問2",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 28,
+      "question": "令和7年度宅建士過去問 問28",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "宅建業法",
+      "topic": "宅建業法 問3",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 29,
+      "question": "令和7年度宅建士過去問 問29",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "宅建業法",
+      "topic": "宅建業法 問4",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 30,
+      "question": "令和7年度宅建士過去問 問30",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "宅建業法",
+      "topic": "宅建業法 問5",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 31,
+      "question": "令和7年度宅建士過去問 問31",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "宅建業法",
+      "topic": "宅建業法 問6",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 32,
+      "question": "令和7年度宅建士過去問 問32",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "宅建業法",
+      "topic": "宅建業法 問7",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 33,
+      "question": "令和7年度宅建士過去問 問33",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "宅建業法",
+      "topic": "宅建業法 問8",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 34,
+      "question": "令和7年度宅建士過去問 問34",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "宅建業法",
+      "topic": "宅建業法 問9",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 35,
+      "question": "令和7年度宅建士過去問 問35",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "宅建業法",
+      "topic": "宅建業法 問10",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 36,
+      "question": "令和7年度宅建士過去問 問36",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "宅建業法",
+      "topic": "宅建業法 問11",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 37,
+      "question": "令和7年度宅建士過去問 問37",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "宅建業法",
+      "topic": "宅建業法 問12",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 38,
+      "question": "令和7年度宅建士過去問 問38",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "宅建業法",
+      "topic": "宅建業法 問13",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 39,
+      "question": "令和7年度宅建士過去問 問39",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "宅建業法",
+      "topic": "宅建業法 問14",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 40,
+      "question": "令和7年度宅建士過去問 問40",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "宅建業法",
+      "topic": "宅建業法 問15",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 41,
+      "question": "令和7年度宅建士過去問 問41",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "宅建業法",
+      "topic": "宅建業法 問16",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 42,
+      "question": "令和7年度宅建士過去問 問42",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "宅建業法",
+      "topic": "宅建業法 問17",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 43,
+      "question": "令和7年度宅建士過去問 問43",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "宅建業法",
+      "topic": "宅建業法 問18",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 44,
+      "question": "令和7年度宅建士過去問 問44",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "宅建業法",
+      "topic": "宅建業法 問19",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 45,
+      "question": "令和7年度宅建士過去問 問45",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 4,
+      "field": "宅建業法",
+      "topic": "宅建業法 問20",
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 46,
+      "question": "令和7年度宅建士過去問 問46",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "需給取引",
+      "topic": "需給取引 問1",
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 47,
+      "question": "令和7年度宅建士過去問 問47",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 3,
+      "field": "需給取引",
+      "topic": "需給取引 問2",
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 48,
+      "question": "令和7年度宅建士過去問 問48",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 2,
+      "field": "需給取引",
+      "topic": "需給取引 問3",
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 49,
+      "question": "令和7年度宅建士過去問 問49",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "土地建物",
+      "topic": "土地建物 問1",
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R07.pdf"
+    },
+    {
+      "qnum": 50,
+      "question": "令和7年度宅建士過去問 問50",
+      "choices": [
+        "選択肢1",
+        "選択肢2",
+        "選択肢3",
+        "選択肢4"
+      ],
+      "answer": 1,
+      "field": "土地建物",
+      "topic": "土地建物 問2",
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R07.pdf"
+    }
+  ]
+}
