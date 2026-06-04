@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import {
+  formatCorrectAnswer,
+  getCorrectAnswerChoiceText,
+  isCorrectAnswer,
+  isCorrectChoice,
+} from "../../lib/takkenAnswer";
 import { saveWrongQuestion } from "../../lib/takkenReviewStorage";
 import type { TakkenPracticeQuestion, TakkenPracticeYear } from "../../lib/takkenPractice";
 
@@ -133,10 +139,12 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
       return;
     }
 
+    const isCorrect = isCorrectAnswer(choiceNumber, question.answer, question.specialScoring);
+
     setSelectedChoice(choiceNumber);
 
-    if (choiceNumber !== question.answer) {
-      saveWrongQuestion({ era: question.era, year: question.year }, question, choiceNumber);
+    if (!isCorrect) {
+      saveWrongQuestion({ era: question.era, examId: question.examId, year: question.year }, question, choiceNumber);
     }
 
     setAnswerRecords((records) => [
@@ -144,7 +152,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
       {
         qnum: question.qnum,
         selectedChoice: choiceNumber,
-        isCorrect: choiceNumber === question.answer,
+        isCorrect,
       },
     ]);
   }
@@ -171,7 +179,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
             <p className="eyebrow">Practice</p>
             <h1>宅建過去問演習</h1>
             <p>
-              年度別に問1から問50まで順番に解くか、収録済みの全年度からランダム50問を解けます。
+              8試験分の過去問を問1から問50まで順番に解くか、収録済み400問からランダム50問を解けます。
             </p>
           </div>
           <span className="status-badge">年度別順番演習 / ランダム演習</span>
@@ -208,7 +216,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
 
           <div className="practice-year-grid">
             {practiceYears.map((year) => (
-              <section className="card practice-year-card" key={year.year}>
+              <section className="card practice-year-card" key={year.examId}>
                 <div className="practice-year-card-header">
                   <h3>{year.era}</h3>
                   <span>{year.year}年</span>
@@ -299,8 +307,10 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
   }
 
   const isAnswered = selectedChoice !== null;
-  const isCorrect = selectedChoice === currentQuestion.answer;
-  const answerChoiceText = currentQuestion.choices[currentQuestion.answer - 1];
+  const isCorrect =
+    selectedChoice !== null && isCorrectAnswer(selectedChoice, currentQuestion.answer, currentQuestion.specialScoring);
+  const answerChoiceText = getCorrectAnswerChoiceText(currentQuestion.choices, currentQuestion.answer);
+  const formattedAnswer = formatCorrectAnswer(currentQuestion.answer, currentQuestion.specialScoring);
 
   return (
     <article className="container practice-page">
@@ -334,7 +344,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
           {currentQuestion.choices.map((choice, index) => {
             const choiceNumber = index + 1;
             const isSelected = selectedChoice === choiceNumber;
-            const isAnswer = currentQuestion.answer === choiceNumber;
+            const isAnswer = isCorrectChoice(choiceNumber, currentQuestion.answer, currentQuestion.specialScoring);
             const resultClass = isAnswered
               ? isAnswer
                 ? " practice-choice-correct"
@@ -366,7 +376,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
           >
             <p className="practice-answer-title">{isCorrect ? "正解" : "不正解"}</p>
             <p>
-              正解番号：{currentQuestion.answer} / {answerChoiceText}
+              正解番号：{formattedAnswer} / {answerChoiceText}
             </p>
             <button className="button button-primary" type="button" onClick={goToNextQuestion}>
               {questionIndex >= selectedSession.questions.length - 1 ? "結果を見る" : "次の問題へ"}

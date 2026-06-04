@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 };
 
 const nextPlans = [
-  "/practice で年度別・ランダム演習をできるようにする予定です。",
-  "/review、/weakness、/traps は今後実装予定です。",
+  "H31/H30以前の過去問データを段階的に追加予定です。",
+  "科目別演習や弱点分析などは今後の拡張候補です。",
 ];
 
 export default function PastPage() {
@@ -25,11 +25,11 @@ export default function PastPage() {
           <p className="eyebrow">Past questions</p>
           <h1>宅建過去問一覧</h1>
           <p>
-            現在は令和7年度〜令和5年度の宅建過去問データを収録済みです。年度別の収録状況と、
+            現在は令和7年度〜令和2年度12月実施分までの宅建過去問データを8試験分収録済みです。収録試験ごとの状況と、
             登録講習免除対象問の有無を確認できます。
           </p>
         </div>
-        <span className="status-badge">直近3年分を収録済み</span>
+        <span className="status-badge">8試験分・400問を収録済み</span>
       </div>
 
       <section className="section-block" aria-labelledby="past-status-heading">
@@ -40,7 +40,7 @@ export default function PastPage() {
 
         <div className="past-year-grid">
           {summaries.map((summary) => (
-            <section className="card past-year-card" key={summary.year}>
+            <section className="card past-year-card" key={summary.examId}>
               <div className="past-year-card-header">
                 <h3>{summary.era}</h3>
                 <span>{summary.year}年</span>
@@ -67,8 +67,8 @@ export default function PastPage() {
         </div>
         <dl className="past-total-list">
           <div>
-            <dt>収録年度</dt>
-            <dd>{totals.yearCount}年分</dd>
+            <dt>収録試験</dt>
+            <dd>{totals.examCount}回分</dd>
           </div>
           <div>
             <dt>収録問題数</dt>
