@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   formatCorrectAnswer,
   getCorrectAnswerChoiceText,
@@ -9,6 +9,14 @@ import {
 } from "../../lib/takkenAnswer";
 import type { TakkenPracticeQuestion, TakkenPracticeYear } from "../../lib/takkenPractice";
 import { saveWrongQuestion } from "../../lib/takkenReviewStorage";
+import {
+  clearSeenQuestions,
+  getSeenQuestionMap,
+  getSeenStats,
+  pickQuestionsWithUnseenPriority,
+  saveSeenQuestions,
+  type TakkenSeenQuestionMap,
+} from "../../lib/takkenSeenStorage";
 
 const SUBJECT_QUESTION_COUNT = 10;
 
@@ -78,20 +86,6 @@ function getAccuracy(correctCount: number, answerCount: number) {
   return Math.round((correctCount / answerCount) * 100);
 }
 
-function shuffleQuestions(questions: TakkenPracticeQuestion[]) {
-  const shuffledQuestions = [...questions];
-
-  for (let index = shuffledQuestions.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [shuffledQuestions[index], shuffledQuestions[randomIndex]] = [
-      shuffledQuestions[randomIndex],
-      shuffledQuestions[index],
-    ];
-  }
-
-  return shuffledQuestions;
-}
-
 function getUniqueQuestions(questions: TakkenPracticeQuestion[]) {
   return Array.from(new Map(questions.map((question) => [question.id, question])).values());
 }
@@ -148,6 +142,8 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [answerRecords, setAnswerRecords] = useState<AnswerRecord[]>([]);
   const [isFinished, setIsFinished] = useState(false);
+  const [seenQuestionMap, setSeenQuestionMap] = useState<TakkenSeenQuestionMap>({});
+  const [isSeenQuestionMapLoaded, setIsSeenQuestionMapLoaded] = useState(false);
 
   const allPracticeQuestions = useMemo(
     () => practiceYears.flatMap((year) => year.questions),
@@ -160,6 +156,11 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
     [answerRecords],
   );
 
+  useEffect(() => {
+    setSeenQuestionMap(getSeenQuestionMap());
+    setIsSeenQuestionMapLoaded(true);
+  }, []);
+
   function resetSession(session: SubjectSession) {
     setSelectedSession(session);
     setQuestionIndex(0);
@@ -169,10 +170,15 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
   }
 
   function startSubjectPractice(group: SubjectGroup) {
-    const questions = shuffleQuestions(group.questions).slice(
-      0,
+    const currentSeenMap = getSeenQuestionMap();
+    const questions = pickQuestionsWithUnseenPriority(
+      group.questions,
       Math.min(SUBJECT_QUESTION_COUNT, group.questions.length),
+      currentSeenMap,
     );
+    const nextSeenMap = saveSeenQuestions(questions, "subject", group.name);
+
+    setSeenQuestionMap(nextSeenMap);
 
     resetSession({
       groupId: group.id,
@@ -192,6 +198,12 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
     if (group) {
       startSubjectPractice(group);
     }
+  }
+
+  function resetSeenQuestionHistory() {
+    clearSeenQuestions();
+    setSeenQuestionMap({});
+    setIsSeenQuestionMapLoaded(true);
   }
 
   function returnToSubjectSelection() {
@@ -255,28 +267,54 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
 
         <section className="section-block" aria-labelledby="weakness-subject-heading">
           <div className="section-heading compact-heading">
-            <p className="eyebrow">Select subject</p>
-            <h2 id="weakness-subject-heading">苦手科目を集中して解く</h2>
+            <div>
+              <p className="eyebrow">Select subject</p>
+              <h2 id="weakness-subject-heading">苦手科目を集中して解く</h2>
+            </div>
+            <button className="button button-secondary" type="button" onClick={resetSeenQuestionHistory}>
+              出題済み履歴をリセット
+            </button>
           </div>
 
           <div className="practice-year-grid weakness-subject-grid">
-            {subjectGroups.map((group) => (
-              <section className="card practice-year-card weakness-subject-card" key={group.id}>
-                <div className="practice-year-card-header">
-                  <h3>{group.name}</h3>
-                  <span>対象{group.questions.length}問</span>
-                </div>
-                <p>{group.description}</p>
-                <button
-                  className="button button-primary practice-start-button"
-                  disabled={group.questions.length === 0}
-                  type="button"
-                  onClick={() => startSubjectPractice(group)}
-                >
-                  この科目を10問解く
-                </button>
-              </section>
-            ))}
+            {subjectGroups.map((group) => {
+              const groupSeenStats = getSeenStats(group.questions, seenQuestionMap);
+
+              return (
+                <section className="card practice-year-card weakness-subject-card" key={group.id}>
+                  <div className="practice-year-card-header">
+                    <h3>{group.name}</h3>
+                    <span>対象{group.questions.length}問</span>
+                  </div>
+                  <p>{group.description}</p>
+                  <dl
+                    className="seen-question-stats compact-seen-question-stats"
+                    aria-label={`${group.name}の出題済み履歴`}
+                  >
+                    <div>
+                      <dt>対象</dt>
+                      <dd>{groupSeenStats.totalCount}問</dd>
+                    </div>
+                    <div>
+                      <dt>出題済み</dt>
+                      <dd>{isSeenQuestionMapLoaded ? `${groupSeenStats.seenCount}問` : "確認中"}</dd>
+                    </div>
+                    <div>
+                      <dt>未出題</dt>
+                      <dd>{isSeenQuestionMapLoaded ? `${groupSeenStats.unseenCount}問` : "確認中"}</dd>
+                    </div>
+                  </dl>
+                  <button
+                    className="button button-primary practice-start-button"
+                    disabled={group.questions.length === 0}
+                    type="button"
+                    onClick={() => startSubjectPractice(group)}
+                  >
+                    この科目を10問解く
+                  </button>
+                </section>
+              );
+            })}
           </div>
         </section>
       </article>
