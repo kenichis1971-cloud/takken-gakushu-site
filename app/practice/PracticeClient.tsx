@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
+import { saveWrongQuestion } from "../../lib/takkenReviewStorage";
 import type { TakkenPracticeQuestion, TakkenPracticeYear } from "../../lib/takkenPractice";
 
 type PracticeClientProps = {
@@ -37,6 +39,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
     () => answerRecords.filter((record) => record.isCorrect).length,
     [answerRecords],
   );
+  const wrongCount = answerRecords.length - correctCount;
 
   function startPractice(year: TakkenPracticeYear) {
     setSelectedYear(year);
@@ -60,6 +63,11 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
     }
 
     setSelectedChoice(choiceNumber);
+
+    if (selectedYear && choiceNumber !== question.answer) {
+      saveWrongQuestion(selectedYear, question, choiceNumber);
+    }
+
     setAnswerRecords((records) => [
       ...records,
       {
@@ -155,9 +163,18 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
               <dt>正答率</dt>
               <dd>{accuracy}%</dd>
             </div>
+            <div>
+              <dt>間違えた問題</dt>
+              <dd>{wrongCount}問</dd>
+            </div>
           </dl>
           <div className="action-row">
-            <button className="button button-primary" type="button" onClick={() => startPractice(selectedYear)}>
+            {wrongCount > 0 ? (
+              <Link className="button button-primary" href="/review">
+                間違えた問題を復習する
+              </Link>
+            ) : null}
+            <button className="button button-secondary" type="button" onClick={() => startPractice(selectedYear)}>
               同じ年度をもう一度解く
             </button>
             <button className="button button-secondary" type="button" onClick={returnToYearSelection}>
