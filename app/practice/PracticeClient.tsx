@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   formatCorrectAnswer,
   getCorrectAnswerChoiceText,
@@ -9,6 +9,14 @@ import {
   isCorrectChoice,
 } from "../../lib/takkenAnswer";
 import { saveWrongQuestion } from "../../lib/takkenReviewStorage";
+import {
+  clearSeenQuestions,
+  getSeenQuestionMap,
+  getSeenStats,
+  pickQuestionsWithUnseenPriority,
+  saveSeenQuestions,
+  type TakkenSeenQuestionMap,
+} from "../../lib/takkenSeenStorage";
 import type { TakkenPracticeQuestion, TakkenPracticeYear } from "../../lib/takkenPractice";
 
 const RANDOM_PRACTICE_QUESTION_COUNT = 50;
@@ -45,38 +53,35 @@ function getAccuracy(correctCount: number, answerCount: number) {
   return Math.round((correctCount / answerCount) * 100);
 }
 
-function shuffleQuestions(questions: TakkenPracticeQuestion[]) {
-  const shuffledQuestions = [...questions];
-
-  for (let index = shuffledQuestions.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [shuffledQuestions[index], shuffledQuestions[randomIndex]] = [
-      shuffledQuestions[randomIndex],
-      shuffledQuestions[index],
-    ];
-  }
-
-  return shuffledQuestions;
-}
-
 export function PracticeClient({ practiceYears }: PracticeClientProps) {
   const [selectedSession, setSelectedSession] = useState<PracticeSession | null>(null);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [answerRecords, setAnswerRecords] = useState<AnswerRecord[]>([]);
   const [isFinished, setIsFinished] = useState(false);
+  const [seenQuestionMap, setSeenQuestionMap] = useState<TakkenSeenQuestionMap>({});
+  const [isSeenQuestionMapLoaded, setIsSeenQuestionMapLoaded] = useState(false);
 
   const allPracticeQuestions = useMemo(
     () => practiceYears.flatMap((year) => year.questions),
     [practiceYears],
   );
   const randomQuestionCount = Math.min(RANDOM_PRACTICE_QUESTION_COUNT, allPracticeQuestions.length);
+  const seenStats = useMemo(
+    () => getSeenStats(allPracticeQuestions, seenQuestionMap),
+    [allPracticeQuestions, seenQuestionMap],
+  );
   const currentQuestion = selectedSession?.questions[questionIndex] ?? null;
   const correctCount = useMemo(
     () => answerRecords.filter((record) => record.isCorrect).length,
     [answerRecords],
   );
   const wrongCount = answerRecords.length - correctCount;
+
+  useEffect(() => {
+    setSeenQuestionMap(getSeenQuestionMap());
+    setIsSeenQuestionMapLoaded(true);
+  }, []);
 
   function resetSession(session: PracticeSession) {
     setSelectedSession(session);
@@ -99,7 +104,11 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
   }
 
   function startRandomPractice() {
-    const questions = shuffleQuestions(allPracticeQuestions).slice(0, randomQuestionCount);
+    const currentSeenMap = getSeenQuestionMap();
+    const questions = pickQuestionsWithUnseenPriority(allPracticeQuestions, randomQuestionCount, currentSeenMap);
+    const nextSeenMap = saveSeenQuestions(questions, "random50");
+
+    setSeenQuestionMap(nextSeenMap);
 
     resetSession({
       mode: "random",
@@ -124,6 +133,12 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
     if (selectedSession.year) {
       startPractice(selectedSession.year);
     }
+  }
+
+  function resetSeenQuestionHistory() {
+    clearSeenQuestions();
+    setSeenQuestionMap({});
+    setIsSeenQuestionMapLoaded(true);
   }
 
   function returnToYearSelection() {
@@ -196,8 +211,25 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
               <h3>全年度ランダム50問</h3>
               <span>収録済み{allPracticeQuestions.length}問</span>
             </div>
-            <p>収録済み{allPracticeQuestions.length}問からランダムに50問を出題します。</p>
+            <p>収録済み{allPracticeQuestions.length}問から、まだ出ていない問題を優先して50問出題します。</p>
             <p>年度をまたいで実戦形式で確認できます。</p>
+            <dl className="seen-question-stats" aria-label="出題済み履歴">
+              <div>
+                <dt>出題済み</dt>
+                <dd>
+                  {isSeenQuestionMapLoaded ? `${seenStats.seenCount}問 / ${seenStats.totalCount}問` : "確認中"}
+                </dd>
+              </div>
+              <div>
+                <dt>未出題</dt>
+                <dd>{isSeenQuestionMapLoaded ? `${seenStats.unseenCount}問` : "確認中"}</dd>
+              </div>
+            </dl>
+            <div className="practice-card-actions">
+              <button className="button button-secondary" type="button" onClick={resetSeenQuestionHistory}>
+                出題済み履歴をリセット
+              </button>
+            </div>
             <button
               className="button button-primary practice-start-button"
               type="button"

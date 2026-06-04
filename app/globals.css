@@ -529,6 +529,15 @@ h3 {
     width: 100%;
   }
 
+  .seen-question-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .weakness-page .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
   .card,
   .hero-panel,
   .next-actions,
@@ -605,6 +614,49 @@ h3 {
 
 .practice-start-button {
   width: 100%;
+}
+
+.seen-question-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.seen-question-stats div {
+  border-radius: 18px;
+  background: var(--surface-muted);
+  padding: 12px 14px;
+}
+
+.seen-question-stats dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.seen-question-stats dd {
+  margin: 4px 0 0;
+  color: var(--primary);
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.compact-seen-question-stats {
+  grid-template-columns: 1fr;
+}
+
+.practice-card-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.weakness-page .section-heading {
+  display: flex;
+  max-width: none;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .practice-question-card {
