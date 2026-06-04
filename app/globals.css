@@ -776,3 +776,98 @@ h3 {
     text-align: left;
   }
 }
+
+.review-page .practice-hero {
+  margin-bottom: 28px;
+}
+
+.review-storage-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.review-actions {
+  margin: 0 0 22px;
+}
+
+.review-question-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.review-question-card {
+  display: grid;
+  gap: 16px;
+}
+
+.review-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.review-card-header h3 {
+  margin-bottom: 0;
+}
+
+.review-card-header span {
+  display: inline-flex;
+  width: fit-content;
+  min-width: max-content;
+  border-radius: 999px;
+  background: rgba(47, 128, 237, 0.12);
+  color: var(--primary-light);
+  font-weight: 800;
+  padding: 4px 12px;
+}
+
+.review-card-details {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.review-card-details div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.review-card-details dt {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.review-card-details dd {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.review-empty-card {
+  max-width: 760px;
+}
+
+@media (max-width: 900px) {
+  .review-question-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .review-card-header,
+  .review-card-details div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
