@@ -1,22 +1,90 @@
 import type { Metadata } from "next";
-import { PreparationPage } from "../shared";
+import {
+  getTakkenPastQuestionSummaries,
+  getTakkenPastQuestionTotals,
+} from "../../lib/takkenPastQuestions";
 
 export const metadata: Metadata = {
   title: "宅建過去問一覧",
-  description: "宅建士試験の年度別過去問一覧ページの準備状況です。",
+  description: "宅建士試験の年度別過去問データ収録状況です。",
 };
 
+const nextPlans = [
+  "/practice で年度別・ランダム演習をできるようにする予定です。",
+  "/review、/weakness、/traps は今後実装予定です。",
+];
+
 export default function PastPage() {
+  const summaries = getTakkenPastQuestionSummaries();
+  const totals = getTakkenPastQuestionTotals(summaries);
+
   return (
-    <PreparationPage
-      eyebrow="Past questions"
-      title="宅建士過去問一覧"
-      lead="平成25年度〜令和7年度の過去問データを、年度別に確認できる構成で収録予定です。"
-      items={[
-        "平成25年度〜令和7年度の過去問データを今後収録予定です。",
-        "年度別に問題を確認できる一覧ページにする予定です。",
-        "現時点では過去問データ投入前のため、問題本文や解答は掲載していません。",
-      ]}
-    />
+    <article className="container past-page">
+      <div className="past-hero">
+        <div>
+          <p className="eyebrow">Past questions</p>
+          <h1>宅建過去問一覧</h1>
+          <p>
+            現在は令和7年度〜令和5年度の宅建過去問データを収録済みです。年度別の収録状況と、
+            登録講習免除対象問の有無を確認できます。
+          </p>
+        </div>
+        <span className="status-badge">直近3年分を収録済み</span>
+      </div>
+
+      <section className="section-block" aria-labelledby="past-status-heading">
+        <div className="section-heading compact-heading">
+          <p className="eyebrow">Status</p>
+          <h2 id="past-status-heading">収録状況</h2>
+        </div>
+
+        <div className="past-year-grid">
+          {summaries.map((summary) => (
+            <section className="card past-year-card" key={summary.year}>
+              <div className="past-year-card-header">
+                <h3>{summary.era}</h3>
+                <span>{summary.year}年</span>
+              </div>
+              <dl className="past-year-details">
+                <div>
+                  <dt>問題数</dt>
+                  <dd>{summary.questionCount}問</dd>
+                </div>
+                <div>
+                  <dt>登録講習免除対象問</dt>
+                  <dd>{summary.hasExemptionQuestions ? "あり" : "なし"}</dd>
+                </div>
+              </dl>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <section className="past-summary card" aria-labelledby="past-summary-heading">
+        <div>
+          <p className="eyebrow">Total</p>
+          <h2 id="past-summary-heading">合計表示</h2>
+        </div>
+        <dl className="past-total-list">
+          <div>
+            <dt>収録年度</dt>
+            <dd>{totals.yearCount}年分</dd>
+          </div>
+          <div>
+            <dt>収録問題数</dt>
+            <dd>{totals.questionCount}問</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section className="next-actions past-next-actions" aria-labelledby="past-plan-heading">
+        <h2 id="past-plan-heading">今後の予定</h2>
+        <ul className="check-list">
+          {nextPlans.map((plan) => (
+            <li key={plan}>{plan}</li>
+          ))}
+        </ul>
+      </section>
+    </article>
   );
 }
