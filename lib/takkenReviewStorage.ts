@@ -1,9 +1,11 @@
+import { isTakkenAnswer, type TakkenAnswer, type TakkenSpecialScoring } from "./takkenAnswer";
 import type { TakkenPracticeQuestion, TakkenPracticeYear } from "./takkenPractice";
 
 export const TAKKEN_WRONG_QUESTIONS_STORAGE_KEY = "takken_wrong_questions_v1";
 
 export type TakkenWrongQuestion = {
   id: string;
+  examId: string;
   year: number;
   era_year: string;
   qnum: number;
@@ -11,7 +13,8 @@ export type TakkenWrongQuestion = {
   topic: string;
   question: string;
   choices: string[];
-  answer: number;
+  answer: TakkenAnswer;
+  special_scoring?: TakkenSpecialScoring;
   selectedAnswer: number;
   is_exemption_question: boolean;
   savedAt: string;
@@ -21,8 +24,21 @@ function isBrowser() {
   return typeof window !== "undefined" && typeof window.localStorage !== "undefined";
 }
 
-function getQuestionId(year: number, qnum: number) {
-  return `${year}-${qnum}`;
+function getQuestionId(examId: string, qnum: number) {
+  return `${examId}-${qnum}`;
+}
+
+function getQuestionExamId(question: Partial<TakkenWrongQuestion>) {
+  if (typeof question.examId === "string") {
+    return question.examId;
+  }
+
+  if (typeof question.id === "string") {
+    const [examId] = question.id.split("-");
+    return examId;
+  }
+
+  return null;
 }
 
 function isWrongQuestion(value: unknown): value is TakkenWrongQuestion {
@@ -34,6 +50,7 @@ function isWrongQuestion(value: unknown): value is TakkenWrongQuestion {
 
   return (
     typeof question.id === "string" &&
+    getQuestionExamId(question) !== null &&
     typeof question.year === "number" &&
     typeof question.era_year === "string" &&
     typeof question.qnum === "number" &&
@@ -42,17 +59,29 @@ function isWrongQuestion(value: unknown): value is TakkenWrongQuestion {
     typeof question.question === "string" &&
     Array.isArray(question.choices) &&
     question.choices.every((choice) => typeof choice === "string") &&
-    typeof question.answer === "number" &&
+    isTakkenAnswer(question.answer) &&
+    (question.special_scoring === undefined || typeof question.special_scoring === "string") &&
     typeof question.selectedAnswer === "number" &&
     typeof question.is_exemption_question === "boolean" &&
     typeof question.savedAt === "string"
   );
 }
 
+function normalizeWrongQuestion(question: TakkenWrongQuestion): TakkenWrongQuestion {
+  return {
+    ...question,
+    examId: getQuestionExamId(question) ?? String(question.year),
+  };
+}
+
 function sortWrongQuestions(questions: TakkenWrongQuestion[]) {
   return [...questions].sort((current, next) => {
     if (current.year !== next.year) {
       return next.year - current.year;
+    }
+
+    if (current.examId !== next.examId) {
+      return current.examId.localeCompare(next.examId);
     }
 
     if (current.qnum !== next.qnum) {
@@ -81,7 +110,7 @@ export function readWrongQuestions(): TakkenWrongQuestion[] {
       return [];
     }
 
-    return sortWrongQuestions(parsedValue.filter(isWrongQuestion));
+    return sortWrongQuestions(parsedValue.filter(isWrongQuestion).map(normalizeWrongQuestion));
   } catch {
     return [];
   }
@@ -96,12 +125,13 @@ function writeWrongQuestions(questions: TakkenWrongQuestion[]) {
 }
 
 export function saveWrongQuestion(
-  year: Pick<TakkenPracticeYear, "era" | "year">,
+  year: Pick<TakkenPracticeYear, "era" | "examId" | "year">,
   question: TakkenPracticeQuestion,
   selectedAnswer: number,
 ) {
   const savedQuestion: TakkenWrongQuestion = {
-    id: getQuestionId(year.year, question.qnum),
+    id: getQuestionId(question.examId, question.qnum),
+    examId: question.examId,
     year: year.year,
     era_year: year.era,
     qnum: question.qnum,
@@ -110,6 +140,7 @@ export function saveWrongQuestion(
     question: question.question,
     choices: question.choices,
     answer: question.answer,
+    special_scoring: question.specialScoring,
     selectedAnswer,
     is_exemption_question: question.isExemptionQuestion,
     savedAt: new Date().toISOString(),

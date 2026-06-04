@@ -2,6 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
+  formatCorrectAnswer,
+  getCorrectAnswerChoiceText,
+  isCorrectAnswer,
+  isCorrectChoice,
+} from "../../lib/takkenAnswer";
+import {
   clearWrongQuestions,
   readWrongQuestions,
   removeWrongQuestion,
@@ -84,7 +90,7 @@ export function ReviewClient() {
       return;
     }
 
-    const isCorrect = choiceNumber === question.answer;
+    const isCorrect = isCorrectAnswer(choiceNumber, question.answer, question.special_scoring);
     setSelectedAnswer(choiceNumber);
     setAnswerRecords((records) => [...records, { id: question.id, isCorrect }]);
 
@@ -153,8 +159,10 @@ export function ReviewClient() {
 
   if (isReviewing && currentQuestion) {
     const isAnswered = selectedAnswer !== null;
-    const isCorrect = selectedAnswer === currentQuestion.answer;
-    const answerChoiceText = currentQuestion.choices[currentQuestion.answer - 1];
+    const isCorrect =
+      selectedAnswer !== null && isCorrectAnswer(selectedAnswer, currentQuestion.answer, currentQuestion.special_scoring);
+    const answerChoiceText = getCorrectAnswerChoiceText(currentQuestion.choices, currentQuestion.answer);
+    const formattedAnswer = formatCorrectAnswer(currentQuestion.answer, currentQuestion.special_scoring);
 
     return (
       <article className="container practice-page review-page">
@@ -186,7 +194,7 @@ export function ReviewClient() {
             {currentQuestion.choices.map((choice, index) => {
               const choiceNumber = index + 1;
               const isSelected = selectedAnswer === choiceNumber;
-              const isAnswer = currentQuestion.answer === choiceNumber;
+              const isAnswer = isCorrectChoice(choiceNumber, currentQuestion.answer, currentQuestion.special_scoring);
               const resultClass = isAnswered
                 ? isAnswer
                   ? " practice-choice-correct"
@@ -218,7 +226,7 @@ export function ReviewClient() {
             >
               <p className="practice-answer-title">{isCorrect ? "正解" : "不正解"}</p>
               <p>
-                正解番号：{currentQuestion.answer} / {answerChoiceText}
+                正解番号：{formattedAnswer} / {answerChoiceText}
               </p>
               <button className="button button-primary" type="button" onClick={goToNextQuestion}>
                 {questionIndex >= reviewQuestions.length - 1 ? "結果を見る" : "次の問題へ"}
@@ -282,7 +290,7 @@ export function ReviewClient() {
                     </div>
                     <div>
                       <dt>正解番号</dt>
-                      <dd>{question.answer}</dd>
+                      <dd>{formatCorrectAnswer(question.answer, question.special_scoring)}</dd>
                     </div>
                   </dl>
                 </section>
