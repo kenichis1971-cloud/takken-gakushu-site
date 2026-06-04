@@ -876,3 +876,16 @@ h3 {
     gap: 4px;
   }
 }
+
+.weakness-subject-card {
+  min-height: 230px;
+}
+
+.weakness-subject-card p {
+  color: var(--muted);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
