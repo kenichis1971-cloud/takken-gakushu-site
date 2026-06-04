@@ -2,7 +2,7 @@ import type { TakkenPracticeQuestion } from "./takkenPractice";
 
 export const TAKKEN_SEEN_QUESTIONS_STORAGE_KEY = "takken_seen_questions_v1";
 
-export type TakkenSeenQuestionMode = "random50" | "subject";
+export type TakkenSeenQuestionMode = "random50" | "subject" | "trap";
 
 export type TakkenSeenQuestionRecord = {
   id: string;
@@ -10,6 +10,7 @@ export type TakkenSeenQuestionRecord = {
   timesSeen: number;
   lastMode: TakkenSeenQuestionMode;
   lastSubject?: string;
+  lastTrapType?: string;
 };
 
 export type TakkenSeenQuestionMap = Record<string, TakkenSeenQuestionRecord>;
@@ -36,7 +37,7 @@ function isSeenRecord(value: unknown, id: string): value is TakkenSeenQuestionRe
     typeof record.seenAt === "string" &&
     typeof record.timesSeen === "number" &&
     Number.isFinite(record.timesSeen) &&
-    (record.lastMode === "random50" || record.lastMode === "subject")
+    (record.lastMode === "random50" || record.lastMode === "subject" || record.lastMode === "trap")
   );
 }
 
@@ -94,6 +95,7 @@ export function getSeenQuestionMap(): TakkenSeenQuestionMap {
           timesSeen: Math.max(1, Math.floor(value.timesSeen)),
           lastMode: value.lastMode,
           lastSubject: typeof value.lastSubject === "string" ? value.lastSubject : undefined,
+          lastTrapType: typeof value.lastTrapType === "string" ? value.lastTrapType : undefined,
         };
       }
 
@@ -108,6 +110,7 @@ export function saveSeenQuestions(
   questions: TakkenPracticeQuestion[],
   mode: TakkenSeenQuestionMode,
   subject?: string,
+  trapType?: string,
 ): TakkenSeenQuestionMap {
   const currentMap = getSeenQuestionMap();
   const seenAt = new Date().toISOString();
@@ -121,6 +124,7 @@ export function saveSeenQuestions(
       timesSeen: (currentRecord?.timesSeen ?? 0) + 1,
       lastMode: mode,
       lastSubject: mode === "subject" ? subject : currentRecord?.lastSubject,
+      lastTrapType: mode === "trap" ? trapType : currentRecord?.lastTrapType,
     };
   });
 
