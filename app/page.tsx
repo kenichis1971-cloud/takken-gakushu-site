@@ -1,17 +1,60 @@
 import Link from "next/link";
 
-const primaryLinks = [
-  { href: "/practice", label: "過去問演習を始める", description: "4択形式の演習ページを準備中です。" },
-  { href: "/past", label: "過去問一覧を見る", description: "年度別の一覧ページを準備中です。" },
-  { href: "/review", label: "復習する", description: "間違えた問題を見直す仕組みを準備中です。" },
-  { href: "/traps", label: "ひっかけ対策を見る", description: "数字・期限・例外の整理ページを準備中です。" },
-  { href: "/courses", label: "講座選びを整理する", description: "独学と講座利用の比較ページを準備中です。" },
+const primaryCtas = [
+  { href: "/practice", label: "過去問演習を始める", variant: "button-primary" },
+  { href: "/weakness", label: "科目別に弱点対策する", variant: "button-secondary" },
+  { href: "/traps", label: "ひっかけ問題を解く", variant: "button-secondary" },
 ];
 
-const features = [
-  "平成25年度〜令和7年度の宅建士過去問を今後収録予定",
-  "演習、復習、弱点対策を1つの流れで使える構成を予定",
-  "広告っぽさを抑え、学習のしやすさを重視した設計",
+const learningMenus = [
+  {
+    title: "年度別演習",
+    description: "令和7年度〜令和2年度12月まで、試験回ごとに順番で確認できます。",
+    href: "/practice",
+    linkLabel: "年度別で解く",
+  },
+  {
+    title: "全年度ランダム50問",
+    description: "収録済み400問から、未出題を優先して50問を出題します。",
+    href: "/practice",
+    linkLabel: "ランダム演習へ",
+  },
+  {
+    title: "科目別演習",
+    description: "権利関係・宅建業法・法令上の制限など、科目ごとに10問ずつ確認できます。",
+    href: "/weakness",
+    linkLabel: "科目別に解く",
+  },
+  {
+    title: "ひっかけ問題演習",
+    description: "正誤、できる・できない、期限・数字など、迷いやすい表現を含む問題を確認できます。",
+    href: "/traps",
+    linkLabel: "ひっかけ対策へ",
+  },
+  {
+    title: "間違えた問題の復習",
+    description: "演習で間違えた問題だけを保存し、あとから解き直せます。",
+    href: "/review",
+    linkLabel: "復習ページへ",
+  },
+  {
+    title: "収録済み過去問一覧",
+    description: "現在収録している8試験分・400問の状況を確認できます。",
+    href: "/past",
+    linkLabel: "収録状況を見る",
+  },
+];
+
+const usageSteps = [
+  "まずは全年度ランダム50問で、今の理解度を確認する",
+  "間違えた問題を復習ページで見直し、もう一度解き直す",
+  "苦手科目やひっかけ問題を、科目別演習・ひっかけ問題演習で補強する",
+];
+
+const collectionStats = [
+  { label: "収録試験", value: "8回分" },
+  { label: "収録問題数", value: "400問" },
+  { label: "対象", value: "令和7年度〜令和2年度12月" },
 ];
 
 export default function Home() {
@@ -20,29 +63,33 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">宅建士専用・準備中</p>
+            <p className="eyebrow">宅建士の過去問演習サイト</p>
             <h1>宅建士の過去問演習を、やさしく続ける</h1>
             <p className="hero-text">
-              平成25年度〜令和7年度の宅建士過去問をもとに、過去問演習・復習・弱点対策を進められる学習サイトを準備中です。
+              400問から、今の自分に合う演習へ。年度別・ランダム・科目別・ひっかけ・復習まで、宅建学習を整理して進められます。
             </p>
-            <div className="hero-actions">
-              <Link className="button button-primary" href="/practice">
-                過去問演習を始める
-              </Link>
-              <Link className="button button-secondary" href="/past">
-                過去問一覧を見る
-              </Link>
+            <div className="hero-actions" aria-label="主要な学習メニュー">
+              {primaryCtas.map((cta) => (
+                <Link className={`button ${cta.variant}`} href={cta.href} key={cta.href}>
+                  {cta.label}
+                </Link>
+              ))}
             </div>
           </div>
-          <div className="hero-panel" aria-label="サイトで準備中の機能">
-            <span className="status-badge">データ投入前</span>
-            <h2>今後の学習フロー</h2>
-            <ol>
-              <li>年度別・分野別に問題を選ぶ</li>
-              <li>4択問題に解答し、正誤を確認する</li>
-              <li>解説を読んで、間違えた問題を復習する</li>
-              <li>弱点とひっかけ表現を整理する</li>
-            </ol>
+          <div className="hero-panel" aria-label="収録状況">
+            <span className="status-badge">収録状況</span>
+            <h2>8試験分・400問を収録</h2>
+            <p>
+              現在は、令和7年度〜令和2年度12月までの8試験分・400問を収録しています。
+            </p>
+            <dl className="stats-list">
+              {collectionStats.map((stat) => (
+                <div key={stat.label}>
+                  <dt>{stat.label}</dt>
+                  <dd>{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
@@ -50,17 +97,23 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Main menu</p>
-            <h2>学習メニュー</h2>
-            <p>各ページは現在準備中です。問題データ投入後に、順次機能を広げていく予定です。</p>
+            <p className="eyebrow">Learning menu</p>
+            <h2>今できる学習メニュー</h2>
+            <p>
+              ランダム演習から復習、科目別・ひっかけ対策まで、目的に合わせて内部メニューを選べます。
+            </p>
           </div>
           <div className="card-grid cards-3">
-            {primaryLinks.map((link) => (
-              <Link className="card link-card" href={link.href} key={link.href}>
-                <h3>{link.label}</h3>
-                <p>{link.description}</p>
-                <span>ページへ進む</span>
-              </Link>
+            {learningMenus.map((menu) => (
+              <article className="card menu-card" key={`${menu.title}-${menu.href}`}>
+                <div>
+                  <h3>{menu.title}</h3>
+                  <p>{menu.description}</p>
+                </div>
+                <Link className="button button-secondary card-button" href={menu.href}>
+                  {menu.linkLabel}
+                </Link>
+              </article>
             ))}
           </div>
         </div>
@@ -69,18 +122,32 @@ export default function Home() {
       <section className="section muted-section">
         <div className="container split-section">
           <div>
-            <p className="eyebrow">Roadmap</p>
-            <h2>宅建士学習サイトとして育てる予定です</h2>
+            <p className="eyebrow">How to use</p>
+            <h2>おすすめの使い方</h2>
             <p>
-              まずは宅建士サイト単体の骨組みを整え、今後、過去問JSONや解説データを追加していきます。
-              複数資格サイトを展開する際にも見通しよく使えるよう、シンプルな構成にしています。
+              迷ったときの使い方の一例です。学習状況に合わせて、必要なメニューから始められます。
             </p>
           </div>
-          <ul className="check-list">
-            {features.map((feature) => (
-              <li key={feature}>{feature}</li>
+          <ol className="step-list">
+            {usageSteps.map((step) => (
+              <li key={step}>{step}</li>
             ))}
-          </ul>
+          </ol>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container course-note card">
+          <div>
+            <p className="eyebrow">Course guide</p>
+            <h2>宅建講座選びの整理ページ</h2>
+            <p>
+              学習サービスや講座を比較する前に、見るポイントを整理するページです。現時点では外部リンクや広告リンクは設置していません。
+            </p>
+          </div>
+          <Link className="button button-secondary" href="/courses">
+            講座選びの整理を見る
+          </Link>
         </div>
       </section>
     </>
