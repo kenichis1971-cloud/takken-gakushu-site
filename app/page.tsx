@@ -64,9 +64,9 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">宅建士の過去問演習サイト</p>
-            <h1>宅建士の過去問演習を、やさしく続ける</h1>
+            <h1>宅建過去問演習サイト</h1>
             <p className="hero-text">
-              400問から、今の自分に合う演習へ。年度別・ランダム・科目別・ひっかけ・復習まで、宅建学習を整理して進められます。
+              令和7年度〜令和2年度12月までの過去問を、年度別・ランダム・科目別・ひっかけ対策・復習で確認できます。
             </p>
             <div className="hero-actions" aria-label="主要な学習メニュー">
               {primaryCtas.map((cta) => (
