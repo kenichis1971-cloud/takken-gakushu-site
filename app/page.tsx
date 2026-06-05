@@ -150,6 +150,21 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <section className="section home-disclosure-section">
+        <div className="container disclosure-card">
+          <div>
+            <p className="eyebrow">Advertising / PR</p>
+            <h2>広告・PR方針について</h2>
+            <p>
+              当サイトでは、将来的に宅建講座や学習サービスに関する広告・PRリンクを掲載する場合があります。掲載する場合は、広告・PRであることが分かる形で表示します。
+            </p>
+          </div>
+          <Link className="text-link" href="/advertising">
+            広告・PRについて
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

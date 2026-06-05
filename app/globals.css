@@ -1176,3 +1176,56 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+.home-disclosure-section {
+  padding-top: 0;
+}
+
+.disclosure-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.disclosure-card h2 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.disclosure-card p:last-child,
+.advertising-related-links p:last-of-type {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.text-link,
+.inline-link {
+  color: var(--primary-light);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.text-link {
+  min-width: max-content;
+}
+
+.advertising-page .notice-box {
+  box-shadow: none;
+}
+
+.advertising-related-links .action-row {
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .disclosure-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
