@@ -193,6 +193,22 @@ h3 {
   color: var(--primary);
 }
 
+.hero-actions .button-secondary,
+.menu-card .card-button {
+  background: #eaf3ff;
+  border-color: #b7d3f2;
+  color: var(--primary);
+  box-shadow: 0 10px 22px rgba(20, 94, 168, 0.12);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.hero-actions .button-secondary:hover,
+.menu-card .card-button:hover {
+  background: #dcecff;
+  border-color: #8fbbea;
+  box-shadow: 0 14px 28px rgba(20, 94, 168, 0.16);
+}
+
 .hero-panel,
 .card,
 .notice-box {
