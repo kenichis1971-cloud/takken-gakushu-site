@@ -12,12 +12,24 @@ export const metadata: Metadata = {
 };
 
 const navItems = [
-  { href: "/past", label: "過去問一覧" },
-  { href: "/practice", label: "演習" },
-  { href: "/review", label: "復習" },
+  { href: "/", label: "トップ" },
+  { href: "/practice", label: "過去問演習" },
+  { href: "/weakness", label: "科目別演習" },
   { href: "/traps", label: "ひっかけ対策" },
-  { href: "/weakness", label: "弱点対策" },
-  { href: "/courses", label: "講座比較" },
+  { href: "/review", label: "復習" },
+  { href: "/past", label: "収録過去問" },
+  { href: "/courses", label: "講座の選び方" },
+];
+
+const utilityNavItems = [{ href: "/advertising", label: "広告・PR" }];
+
+const footerItems = [
+  { href: "/", label: "トップ" },
+  { href: "/courses", label: "講座の選び方" },
+  { href: "/advertising", label: "広告・PRについて" },
+  { href: "/privacy", label: "プライバシーポリシー" },
+  { href: "/terms", label: "利用規約" },
+  { href: "/contact", label: "お問い合わせ" },
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -33,13 +45,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <span className="brand-subtitle">過去問演習・復習・弱点対策</span>
               </span>
             </Link>
-            <nav className="site-nav" aria-label="主要ページ">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+            <div className="site-nav-area">
+              <nav className="site-nav" aria-label="主要ページ">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+              <nav className="site-utility-nav" aria-label="広告表示について">
+                {utilityNavItems.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
           </div>
         </header>
         <main>{children}</main>
@@ -47,10 +68,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="container footer-inner">
             <p>宅建士試験の学習を、少しずつ続けるための準備サイトです。</p>
             <nav aria-label="補助ページ">
-              <Link href="/privacy">プライバシーポリシー</Link>
-              <Link href="/terms">利用規約</Link>
-              <Link href="/contact">お問い合わせ</Link>
-              <Link href="/advertising">広告・PRについて</Link>
+              {footerItems.map((item) => (
+                <Link key={item.href} href={item.href}>
+                  {item.label}
+                </Link>
+              ))}
             </nav>
           </div>
         </footer>
