@@ -110,7 +110,7 @@ export default function CoursesPage() {
             今の学習状況、苦手分野、使える時間、必要なサポートを整理しておくと、自分に合う学習手段を考えやすくなります。
           </p>
         </div>
-        <div className="card courses-hero-card" aria-label="このページの位置づけ">
+        <div className="card courses-hero-card hero-image-ready" aria-label="このページの位置づけ">
           <span className="status-badge">比較前の整理ページ</span>
           <p>
             このページは、特定講座のランキングや優劣ではなく、講座・学習サービスを選ぶ前に見る観点を整理するためのページです。

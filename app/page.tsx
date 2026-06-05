@@ -60,7 +60,7 @@ const collectionStats = [
 export default function Home() {
   return (
     <>
-      <section className="hero">
+      <section className="hero top-hero">
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">宅建士の過去問演習サイト</p>
@@ -76,7 +76,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="hero-panel" aria-label="収録状況">
+          <div className="hero-panel hero-image-ready" aria-label="収録状況">
             <span className="status-badge">収録状況</span>
             <h2>8試験分・400問を収録</h2>
             <p>
