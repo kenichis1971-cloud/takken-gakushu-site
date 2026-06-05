@@ -178,6 +178,13 @@ a {
   text-shadow: 0 2px 12px rgba(11, 42, 74, 0.32);
 }
 
+.top-hero h1 {
+  max-width: 10em;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+
 .top-hero .eyebrow,
 .top-hero h1,
 .top-hero .hero-text {

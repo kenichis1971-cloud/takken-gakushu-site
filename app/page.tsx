@@ -64,7 +64,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">宅建士の過去問演習サイト</p>
-            <h1>宅建過去問演習</h1>
+            <h1>宅建過去問演習サイト</h1>
             <p className="hero-text">
               令和7年度〜令和2年度12月までの過去問を、年度別・ランダム・科目別・ひっかけ対策・復習で確認できます。
             </p>
