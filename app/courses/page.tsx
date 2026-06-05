@@ -204,6 +204,7 @@ export default function CoursesPage() {
         </p>
         <p>
           今後、資格講座や学習サービスに関する広告・PRリンクを掲載する場合があります。掲載する場合は、広告・PRであることが分かるように表示します。
+          詳しくは<Link className="inline-link" href="/advertising">広告・PRについて</Link>をご確認ください。
         </p>
       </section>
     </article>

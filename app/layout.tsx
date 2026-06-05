@@ -50,6 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/privacy">プライバシーポリシー</Link>
               <Link href="/terms">利用規約</Link>
               <Link href="/contact">お問い合わせ</Link>
+              <Link href="/advertising">広告・PRについて</Link>
             </nav>
           </div>
         </footer>
