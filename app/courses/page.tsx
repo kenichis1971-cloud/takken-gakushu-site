@@ -102,7 +102,7 @@ export default function CoursesPage() {
   return (
     <article className="container courses-page">
       <section className="courses-hero" aria-labelledby="courses-heading">
-        <div>
+        <div className="courses-hero-copy">
           <p className="eyebrow">Courses</p>
           <h1 id="courses-heading">宅建講座を選ぶ前に整理したいこと</h1>
           <p>
