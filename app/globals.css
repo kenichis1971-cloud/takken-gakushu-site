@@ -1213,21 +1213,45 @@ h3 {
 }
 
 .courses-hero {
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
   gap: 28px;
   align-items: stretch;
   margin-bottom: 34px;
+  padding: clamp(34px, 6vw, 64px);
+  border: 1px solid rgba(216, 226, 239, 0.48);
+  border-radius: calc(var(--radius) + 10px);
+  background:
+    linear-gradient(90deg, rgba(11, 42, 74, 0.76) 0%, rgba(11, 42, 74, 0.48) 52%, rgba(20, 94, 168, 0.24) 100%),
+    url("/images/heroes/takken-courses-hero-pc.jpg") center / cover no-repeat;
+  box-shadow: 0 24px 58px rgba(11, 42, 74, 0.18);
+}
+
+.courses-hero-copy {
+  align-self: center;
+  text-shadow: 0 2px 14px rgba(11, 42, 74, 0.4);
 }
 
 .courses-hero h1 {
+  color: #ffffff;
   font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.courses-hero .eyebrow,
+.courses-hero p:not(.eyebrow) {
+  color: #ffffff;
 }
 
 .courses-hero p:not(.eyebrow),
 .courses-page .section-heading p,
 .courses-notice p {
   max-width: 820px;
+}
+
+.courses-page .section-heading p,
+.courses-notice p {
   color: var(--muted);
 }
 
@@ -1236,7 +1260,19 @@ h3 {
   flex-direction: column;
   justify-content: center;
   gap: 18px;
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(11, 42, 74, 0.68);
   box-shadow: none;
+  backdrop-filter: blur(2px);
+}
+
+.courses-hero-card p {
+  color: #ffffff;
+}
+
+.courses-hero-card .status-badge {
+  background: rgba(47, 128, 237, 0.22);
+  color: #ffffff;
 }
 
 .courses-hero-card p,
@@ -1311,6 +1347,15 @@ h3 {
   .courses-link-grid,
   .courses-question-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .courses-hero {
+    background:
+      linear-gradient(180deg, rgba(11, 42, 74, 0.72) 0%, rgba(11, 42, 74, 0.44) 58%, rgba(20, 94, 168, 0.24) 100%),
+      url("/images/heroes/takken-courses-hero-sp.jpg") center / cover no-repeat;
   }
 }
 
