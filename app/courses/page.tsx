@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "宅建講座を選ぶ前に整理したいこと",
+  title: "宅建講座を選ぶ前に整理したい事",
   description:
     "宅建講座や学習サービスを比較する前に、学習状況・苦手分野・必要なサポートを整理するためのページです。",
 };
@@ -105,7 +105,7 @@ export default function CoursesPage() {
         <div className="container courses-hero-grid">
           <div className="courses-hero-copy">
             <p className="eyebrow">Courses</p>
-            <h1 id="courses-heading">宅建講座を選ぶ前に整理したいこと</h1>
+            <h1 id="courses-heading">宅建講座を選ぶ前に整理したい事</h1>
             <p>
               宅建の学習方法は、独学・市販教材・通信講座・オンライン学習など複数あります。いきなり講座を比較する前に、
               今の学習状況、苦手分野、使える時間、必要なサポートを整理しておくと、自分に合う学習手段を考えやすくなります。
