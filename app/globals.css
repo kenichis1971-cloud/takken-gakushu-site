@@ -11,6 +11,9 @@
   --shadow: 0 18px 45px rgba(16, 38, 72, 0.12);
   --radius: 22px;
   --site-hero-height-desktop: 520px;
+  --site-hero-title-size-desktop: clamp(2.2rem, 5vw, 4rem);
+  --site-hero-title-line-height: 1.16;
+  --site-hero-title-letter-spacing: -0.035em;
 }
 
 * {
@@ -182,11 +185,15 @@ a {
   text-shadow: 0 2px 12px rgba(11, 42, 74, 0.32);
 }
 
+.top-hero h1,
+.courses-hero h1 {
+  font-size: var(--site-hero-title-size-desktop);
+  line-height: var(--site-hero-title-line-height);
+  letter-spacing: var(--site-hero-title-letter-spacing);
+}
+
 .top-hero h1 {
   max-width: 10em;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1.08;
-  letter-spacing: -0.06em;
 }
 
 .top-hero .eyebrow,
@@ -1250,9 +1257,6 @@ h3 {
 .courses-hero h1 {
   max-width: 9.4em;
   color: #ffffff;
-  font-size: clamp(1.9rem, 4vw, 3.05rem);
-  line-height: 1.18;
-  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
