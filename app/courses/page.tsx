@@ -100,113 +100,117 @@ const internalLinks = [
 
 export default function CoursesPage() {
   return (
-    <article className="container courses-page">
-      <section className="courses-hero" aria-labelledby="courses-heading">
-        <div className="courses-hero-copy">
-          <p className="eyebrow">Courses</p>
-          <h1 id="courses-heading">宅建講座を選ぶ前に整理したいこと</h1>
-          <p>
-            宅建の学習方法は、独学・市販教材・通信講座・オンライン学習など複数あります。いきなり講座を比較する前に、
-            今の学習状況、苦手分野、使える時間、必要なサポートを整理しておくと、自分に合う学習手段を考えやすくなります。
-          </p>
-        </div>
-        <div className="card courses-hero-card hero-image-ready" aria-label="このページの位置づけ">
-          <span className="status-badge">比較前の整理ページ</span>
-          <p>
-            このページは、特定講座のランキングや優劣ではなく、講座・学習サービスを選ぶ前に見る観点を整理するためのページです。
-          </p>
+    <article className="courses-page">
+      <section className="hero courses-hero" aria-labelledby="courses-heading">
+        <div className="container courses-hero-grid">
+          <div className="courses-hero-copy">
+            <p className="eyebrow">Courses</p>
+            <h1 id="courses-heading">宅建講座を選ぶ前に整理したいこと</h1>
+            <p>
+              宅建の学習方法は、独学・市販教材・通信講座・オンライン学習など複数あります。いきなり講座を比較する前に、
+              今の学習状況、苦手分野、使える時間、必要なサポートを整理しておくと、自分に合う学習手段を考えやすくなります。
+            </p>
+          </div>
+          <div className="courses-hero-card hero-image-ready" aria-label="このページの位置づけ">
+            <span className="status-badge">比較前の整理ページ</span>
+            <p>
+              このページは、特定講座のランキングや優劣ではなく、講座・学習サービスを選ぶ前に見る観点を整理するためのページです。
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="section-block" aria-labelledby="course-checklist-heading">
-        <div className="section-heading compact-heading">
-          <p className="eyebrow">Checklist</p>
-          <h2 id="course-checklist-heading">講座を検討する前のチェックリスト</h2>
-          <p>
-            講座を使うか、独学で進めるかを考える前に、自分の学習状況を一度書き出してみると、必要なサポートを考えやすくなります。
-          </p>
-        </div>
-        <section className="card courses-check-card">
-          <ul className="check-list courses-check-list">
-            {preCourseChecklist.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+      <div className="container courses-content">
+        <section className="section-block" aria-labelledby="course-checklist-heading">
+          <div className="section-heading compact-heading">
+            <p className="eyebrow">Checklist</p>
+            <h2 id="course-checklist-heading">講座を検討する前のチェックリスト</h2>
+            <p>
+              講座を使うか、独学で進めるかを考える前に、自分の学習状況を一度書き出してみると、必要なサポートを考えやすくなります。
+            </p>
+          </div>
+          <section className="card courses-check-card">
+            <ul className="check-list courses-check-list">
+              {preCourseChecklist.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
         </section>
-      </section>
 
-      <section className="section-block" aria-labelledby="learning-type-heading">
-        <div className="section-heading compact-heading">
-          <p className="eyebrow">Learning type</p>
-          <h2 id="learning-type-heading">学習タイプ別の整理</h2>
-          <p>
-            同じ宅建学習でも、初学者・独学中・忙しい社会人・直前期や再受験では、見ておきたいポイントが変わります。
-          </p>
-        </div>
-        <div className="card-grid courses-type-grid">
-          {learningTypes.map((type) => (
-            <section className="card courses-type-card" key={type.title}>
-              <h3>{type.title}</h3>
-              <p>{type.description}</p>
-              <ul className="check-list compact">
-                {type.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
-      </section>
+        <section className="section-block" aria-labelledby="learning-type-heading">
+          <div className="section-heading compact-heading">
+            <p className="eyebrow">Learning type</p>
+            <h2 id="learning-type-heading">学習タイプ別の整理</h2>
+            <p>
+              同じ宅建学習でも、初学者・独学中・忙しい社会人・直前期や再受験では、見ておきたいポイントが変わります。
+            </p>
+          </div>
+          <div className="card-grid courses-type-grid">
+            {learningTypes.map((type) => (
+              <section className="card courses-type-card" key={type.title}>
+                <h3>{type.title}</h3>
+                <p>{type.description}</p>
+                <ul className="check-list compact">
+                  {type.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </section>
 
-      <section className="section-block" aria-labelledby="course-questions-heading">
-        <div className="section-heading compact-heading">
-          <p className="eyebrow">Common questions</p>
-          <h2 id="course-questions-heading">比較前によくある迷い</h2>
-          <p>
-            講座名や価格を見る前に、どの迷いが大きいのかを整理しておくと、比較する項目を絞り込みやすくなります。
-          </p>
-        </div>
-        <div className="courses-question-grid">
-          {commonQuestions.map((question) => (
-            <div className="card courses-question-card" key={question}>
-              {question}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-block" aria-labelledby="site-check-heading">
-        <div className="section-heading compact-heading">
-          <p className="eyebrow">Inside this site</p>
-          <h2 id="site-check-heading">このサイト内で先に確認できること</h2>
-          <p>
-            講座を比較する前に、まずは過去問演習で自分の苦手分野を整理しておくと、必要なサポートを考えやすくなります。
-          </p>
-        </div>
-        <div className="card-grid courses-link-grid">
-          {internalLinks.map((item) => (
-            <Link className="card link-card courses-link-card" href={item.href} key={item.href}>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+        <section className="section-block" aria-labelledby="course-questions-heading">
+          <div className="section-heading compact-heading">
+            <p className="eyebrow">Common questions</p>
+            <h2 id="course-questions-heading">比較前によくある迷い</h2>
+            <p>
+              講座名や価格を見る前に、どの迷いが大きいのかを整理しておくと、比較する項目を絞り込みやすくなります。
+            </p>
+          </div>
+          <div className="courses-question-grid">
+            {commonQuestions.map((question) => (
+              <div className="card courses-question-card" key={question}>
+                {question}
               </div>
-              <span>ページを見る</span>
-            </Link>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      <section className="notice-box courses-notice" aria-labelledby="course-notice-heading">
-        <h2 id="course-notice-heading">確認しておきたいこと</h2>
-        <p>
-          このページは、宅建講座や学習サービスを比較する前に確認したい観点を整理するためのものです。特定の講座の成果や合格を保証するものではありません。
-          講座内容・価格・キャンペーン・申込み条件などは変更される場合があるため、申込み前には必ず各公式情報をご確認ください。
-        </p>
-        <p>
-          今後、資格講座や学習サービスに関する広告・PRリンクを掲載する場合があります。掲載する場合は、広告・PRであることが分かるように表示します。
-          詳しくは<Link className="inline-link" href="/advertising">広告・PRについて</Link>をご確認ください。
-        </p>
-      </section>
+        <section className="section-block" aria-labelledby="site-check-heading">
+          <div className="section-heading compact-heading">
+            <p className="eyebrow">Inside this site</p>
+            <h2 id="site-check-heading">このサイト内で先に確認できること</h2>
+            <p>
+              講座を比較する前に、まずは過去問演習で自分の苦手分野を整理しておくと、必要なサポートを考えやすくなります。
+            </p>
+          </div>
+          <div className="card-grid courses-link-grid">
+            {internalLinks.map((item) => (
+              <Link className="card link-card courses-link-card" href={item.href} key={item.href}>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+                <span>ページを見る</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="notice-box courses-notice" aria-labelledby="course-notice-heading">
+          <h2 id="course-notice-heading">確認しておきたいこと</h2>
+          <p>
+            このページは、宅建講座や学習サービスを比較する前に確認したい観点を整理するためのものです。特定の講座の成果や合格を保証するものではありません。
+            講座内容・価格・キャンペーン・申込み条件などは変更される場合があるため、申込み前には必ず各公式情報をご確認ください。
+          </p>
+          <p>
+            今後、資格講座や学習サービスに関する広告・PRリンクを掲載する場合があります。掲載する場合は、広告・PRであることが分かるように表示します。
+            詳しくは<Link className="inline-link" href="/advertising">広告・PRについて</Link>をご確認ください。
+          </p>
+        </section>
+      </div>
     </article>
   );
 }

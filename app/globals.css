@@ -1209,24 +1209,28 @@ h3 {
 }
 
 .courses-page {
-  padding: 58px 0 76px;
+  padding: 0 0 76px;
+}
+
+.courses-content {
+  padding-top: 34px;
 }
 
 .courses-hero {
   isolation: isolate;
   overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(11, 42, 74, 0.74) 0%, rgba(11, 42, 74, 0.46) 48%, rgba(20, 94, 168, 0.22) 100%),
+    url("/images/heroes/takken-courses-hero-pc.jpg") center / cover no-repeat;
+}
+
+.courses-hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
   gap: 28px;
   align-items: stretch;
-  margin-bottom: 34px;
-  padding: clamp(34px, 6vw, 64px);
-  border: 1px solid rgba(216, 226, 239, 0.48);
-  border-radius: calc(var(--radius) + 10px);
-  background:
-    linear-gradient(90deg, rgba(11, 42, 74, 0.76) 0%, rgba(11, 42, 74, 0.48) 52%, rgba(20, 94, 168, 0.24) 100%),
-    url("/images/heroes/takken-courses-hero-pc.jpg") center / cover no-repeat;
-  box-shadow: 0 24px 58px rgba(11, 42, 74, 0.18);
 }
 
 .courses-hero-copy {
@@ -1260,9 +1264,10 @@ h3 {
   flex-direction: column;
   justify-content: center;
   gap: 18px;
-  border-color: rgba(255, 255, 255, 0.22);
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius);
   background: rgba(11, 42, 74, 0.68);
-  box-shadow: none;
   backdrop-filter: blur(2px);
 }
 
@@ -1341,7 +1346,7 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  .courses-hero,
+  .courses-hero-grid,
   .courses-check-list,
   .courses-type-grid,
   .courses-link-grid,
