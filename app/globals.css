@@ -10,6 +10,7 @@
   --border: #d8e2ef;
   --shadow: 0 18px 45px rgba(16, 38, 72, 0.12);
   --radius: 22px;
+  --site-hero-height-desktop: 520px;
 }
 
 * {
@@ -154,6 +155,9 @@ a {
 .top-hero,
 .courses-hero {
   position: relative;
+  display: flex;
+  min-height: var(--site-hero-height-desktop);
+  align-items: center;
 }
 
 .top-hero {
@@ -728,6 +732,11 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  .top-hero,
+  .courses-hero {
+    min-height: auto;
+  }
+
   .top-hero {
     background:
       linear-gradient(180deg, rgba(11, 42, 74, 0.7) 0%, rgba(11, 42, 74, 0.46) 55%, rgba(20, 94, 168, 0.24) 100%),
@@ -1217,9 +1226,6 @@ h3 {
 }
 
 .courses-hero {
-  display: flex;
-  min-height: 500px;
-  align-items: center;
   isolation: isolate;
   overflow: hidden;
   background:
@@ -1242,11 +1248,11 @@ h3 {
 }
 
 .courses-hero h1 {
-  max-width: 12em;
+  max-width: 9.4em;
   color: #ffffff;
-  font-size: clamp(1.95rem, 4.4vw, 3.2rem);
-  line-height: 1.1;
-  letter-spacing: -0.06em;
+  font-size: clamp(1.9rem, 4vw, 3.05rem);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
@@ -1365,7 +1371,6 @@ h3 {
 
 @media (max-width: 640px) {
   .courses-hero {
-    min-height: auto;
     background:
       linear-gradient(180deg, rgba(11, 42, 74, 0.72) 0%, rgba(11, 42, 74, 0.44) 58%, rgba(20, 94, 168, 0.24) 100%),
       url("/images/heroes/takken-courses-hero-sp.jpg") center / cover no-repeat;
