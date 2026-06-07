@@ -66,7 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main>{children}</main>
         <footer className="site-footer">
           <div className="container footer-inner">
-            <p>宅建士試験の学習を、少しずつ続けるための準備サイトです。</p>
+            <p>宅建士試験の学習を、少しずつ続けるための学習サイトです。</p>
             <nav aria-label="補助ページ">
               {footerItems.map((item) => (
                 <Link key={item.href} href={item.href}>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const currentStatusText =
-  "現在、令和7年度から平成25年度までの過去問を収録しています。今後は、収録済み過去問の確認しやすさや演習ページへの導線、解説・復習しやすさの改善を中心に調整していく予定です。";
+  "令和7年度から平成25年度までの15試験回分・750問を収録しています。収録済み過去問の確認と、年度別演習・ランダム演習へ進む前の一覧確認に利用できます。";
 
 export default function PastPage() {
   const summaries = getTakkenPastQuestionSummaries();
