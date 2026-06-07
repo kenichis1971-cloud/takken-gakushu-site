@@ -25,11 +25,11 @@ export default function PastPage() {
           <p className="eyebrow">Past questions</p>
           <h1>宅建過去問一覧</h1>
           <p>
-            現在は令和7年度〜令和2年度12月実施分までの宅建過去問データを8試験分収録済みです。収録試験ごとの状況と、
+            現在は令和7年度〜平成29年度までの宅建過去問データを11試験回分収録済みです。収録試験ごとの状況と、
             登録講習免除対象問の有無を確認できます。
           </p>
         </div>
-        <span className="status-badge">8試験分・400問を収録済み</span>
+        <span className="status-badge">11試験回分・550問を収録済み</span>
       </div>
 
       <section className="section-block" aria-labelledby="past-status-heading">
