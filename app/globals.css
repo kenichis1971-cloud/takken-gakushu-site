@@ -583,6 +583,10 @@ h3 {
   margin-top: 22px;
 }
 
+.hero-panel-link {
+  margin-top: 22px;
+}
+
 .stats-list div:first-child {
   border-top: 0;
   padding-top: 0;

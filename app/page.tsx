@@ -4,6 +4,7 @@ const primaryCtas = [
   { href: "/practice", label: "過去問演習を始める", variant: "button-primary" },
   { href: "/weakness", label: "科目別に弱点対策する", variant: "button-secondary" },
   { href: "/traps", label: "ひっかけ問題を解く", variant: "button-secondary" },
+  { href: "/past", label: "収録過去問を見る", variant: "button-secondary" },
 ];
 
 const learningMenus = [
@@ -66,7 +67,7 @@ export default function Home() {
             <p className="eyebrow">宅建士の過去問演習サイト</p>
             <h1>宅建過去問演習サイト</h1>
             <p className="hero-text">
-              令和7年度〜平成25年度までの過去問を、年度別・ランダム・科目別・ひっかけ対策・復習で確認できます。
+              令和7年度〜平成25年度までの15試験回分・750問を収録。年度別・ランダム・科目別・ひっかけ対策・復習で確認できます。
             </p>
             <div className="hero-actions" aria-label="主要な学習メニュー">
               {primaryCtas.map((cta) => (
@@ -80,7 +81,7 @@ export default function Home() {
             <span className="status-badge">収録状況</span>
             <h2>15試験回分・750問を収録</h2>
             <p>
-              現在は、令和7年度〜平成25年度までの15試験回分・750問を収録しています。
+              令和7年度〜平成25年度までの過去問を収録し、年度別演習やランダム演習からすぐに取り組めます。
             </p>
             <dl className="stats-list">
               {collectionStats.map((stat) => (
@@ -90,6 +91,9 @@ export default function Home() {
                 </div>
               ))}
             </dl>
+            <Link className="button button-secondary hero-panel-link" href="/past">
+              収録過去問一覧へ
+            </Link>
           </div>
         </div>
       </section>
@@ -100,7 +104,7 @@ export default function Home() {
             <p className="eyebrow">Learning menu</p>
             <h2>今できる学習メニュー</h2>
             <p>
-              ランダム演習から復習、科目別・ひっかけ対策まで、目的に合わせて内部メニューを選べます。
+              過去問演習、科目別演習、ひっかけ対策、復習、収録過去問一覧、講座選びの整理ページへ、目的に合わせて移動できます。
             </p>
           </div>
           <div className="card-grid cards-3">
@@ -142,7 +146,7 @@ export default function Home() {
             <p className="eyebrow">Course guide</p>
             <h2>宅建講座選びの整理ページ</h2>
             <p>
-              学習サービスや講座を比較する前に、見るポイントを整理するページです。現時点では外部リンクや広告リンクは設置していません。
+              学習サービスや講座を比較する前に、見るポイントを整理するページです。外部リンクや広告リンクは設置せず、比較前の確認事項をまとめています。
             </p>
           </div>
           <Link className="button button-secondary" href="/courses">
