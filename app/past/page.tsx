@@ -9,10 +9,8 @@ export const metadata: Metadata = {
   description: "宅建士試験の年度別過去問データ収録状況です。",
 };
 
-const nextPlans = [
-  "平成24年度以前の過去問データを段階的に追加予定です。",
-  "科目別演習や弱点分析などは今後の拡張候補です。",
-];
+const currentStatusText =
+  "現在、令和7年度から平成25年度までの過去問を収録しています。今後は、収録済み過去問の確認しやすさや演習ページへの導線、解説・復習しやすさの改善を中心に調整していく予定です。";
 
 export default function PastPage() {
   const summaries = getTakkenPastQuestionSummaries();
@@ -78,12 +76,8 @@ export default function PastPage() {
       </section>
 
       <section className="next-actions past-next-actions" aria-labelledby="past-plan-heading">
-        <h2 id="past-plan-heading">今後の予定</h2>
-        <ul className="check-list">
-          {nextPlans.map((plan) => (
-            <li key={plan}>{plan}</li>
-          ))}
-        </ul>
+        <h2 id="past-plan-heading">収録状況について</h2>
+        <p>{currentStatusText}</p>
       </section>
     </article>
   );
