@@ -1,3 +1,7 @@
+import questions2013 from "../data/takken/past/2013_questions.json";
+import questions2014 from "../data/takken/past/2014_questions.json";
+import questions2015 from "../data/takken/past/2015_questions.json";
+import questions2016 from "../data/takken/past/2016_questions.json";
 import questions2017 from "../data/takken/past/2017_questions.json";
 import questions2018 from "../data/takken/past/2018_questions.json";
 import questions2019 from "../data/takken/past/2019_questions.json";
@@ -53,6 +57,10 @@ const pastQuestionSources: PastQuestionSource[] = [
   { data: questions2019, examId: "2019", era: "令和元年度" },
   { data: questions2018, examId: "2018", era: "平成30年度" },
   { data: questions2017, examId: "2017", era: "平成29年度" },
+  { data: questions2016, examId: "2016", era: "平成28年度" },
+  { data: questions2015, examId: "2015", era: "平成27年度" },
+  { data: questions2014, examId: "2014", era: "平成26年度" },
+  { data: questions2013, examId: "2013", era: "平成25年度" },
 ];
 
 export function getTakkenPastQuestionSummaries(): TakkenPastQuestionSummary[] {
