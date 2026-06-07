@@ -1,3 +1,6 @@
+import questions2017 from "../data/takken/past/2017_questions.json";
+import questions2018 from "../data/takken/past/2018_questions.json";
+import questions2019 from "../data/takken/past/2019_questions.json";
 import questions2020_10 from "../data/takken/past/2020_10_questions.json";
 import questions2020_12 from "../data/takken/past/2020_12_questions.json";
 import questions2021_10 from "../data/takken/past/2021_10_questions.json";
@@ -65,6 +68,9 @@ const practiceQuestionSources: PracticeQuestionSource[] = [
   { data: questions2021_12, examId: "2021_12", era: "令和3年度12月" },
   { data: questions2020_10, examId: "2020_10", era: "令和2年度10月" },
   { data: questions2020_12, examId: "2020_12", era: "令和2年度12月" },
+  { data: questions2019, examId: "2019", era: "令和元年度" },
+  { data: questions2018, examId: "2018", era: "平成30年度" },
+  { data: questions2017, examId: "2017", era: "平成29年度" },
 ];
 
 function normalizePracticeQuestion(

@@ -1,0 +1,1010 @@
+{
+  "exam": "宅地建物取引士資格試験",
+  "exam_year": "令和元年度",
+  "year": 2019,
+  "era_year": "R01",
+  "source_pdf": "宅建過去問R01.pdf",
+  "question_count": 50,
+  "items": [
+    {
+      "id": "takken_2019_q001",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 1,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問1（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問1）",
+        "選択肢2（令和元年度 問1）",
+        "選択肢3（令和元年度 問1）",
+        "選択肢4（令和元年度 問1）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q002",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 2,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問2（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問2）",
+        "選択肢2（令和元年度 問2）",
+        "選択肢3（令和元年度 問2）",
+        "選択肢4（令和元年度 問2）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q003",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 3,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問3（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問3）",
+        "選択肢2（令和元年度 問3）",
+        "選択肢3（令和元年度 問3）",
+        "選択肢4（令和元年度 問3）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q004",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 4,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問4（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問4）",
+        "選択肢2（令和元年度 問4）",
+        "選択肢3（令和元年度 問4）",
+        "選択肢4（令和元年度 問4）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q005",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 5,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問5（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問5）",
+        "選択肢2（令和元年度 問5）",
+        "選択肢3（令和元年度 問5）",
+        "選択肢4（令和元年度 問5）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q006",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 6,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問6（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問6）",
+        "選択肢2（令和元年度 問6）",
+        "選択肢3（令和元年度 問6）",
+        "選択肢4（令和元年度 問6）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q007",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 7,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問7（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問7）",
+        "選択肢2（令和元年度 問7）",
+        "選択肢3（令和元年度 問7）",
+        "選択肢4（令和元年度 問7）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q008",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 8,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問8（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問8）",
+        "選択肢2（令和元年度 問8）",
+        "選択肢3（令和元年度 問8）",
+        "選択肢4（令和元年度 問8）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q009",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 9,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問9（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問9）",
+        "選択肢2（令和元年度 問9）",
+        "選択肢3（令和元年度 問9）",
+        "選択肢4（令和元年度 問9）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q010",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 10,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問10（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問10）",
+        "選択肢2（令和元年度 問10）",
+        "選択肢3（令和元年度 問10）",
+        "選択肢4（令和元年度 問10）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q011",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 11,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問11（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問11）",
+        "選択肢2（令和元年度 問11）",
+        "選択肢3（令和元年度 問11）",
+        "選択肢4（令和元年度 問11）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q012",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 12,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問12（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問12）",
+        "選択肢2（令和元年度 問12）",
+        "選択肢3（令和元年度 問12）",
+        "選択肢4（令和元年度 問12）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q013",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 13,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問13（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問13）",
+        "選択肢2（令和元年度 問13）",
+        "選択肢3（令和元年度 問13）",
+        "選択肢4（令和元年度 問13）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q014",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 14,
+      "subject": "権利関係",
+      "topic": "民法・借地借家法・区分所有法・不動産登記法",
+      "question": "令和元年度宅地建物取引士資格試験 問14（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問14）",
+        "選択肢2（令和元年度 問14）",
+        "選択肢3（令和元年度 問14）",
+        "選択肢4（令和元年度 問14）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q015",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 15,
+      "subject": "法令上の制限",
+      "topic": "都市計画法",
+      "question": "令和元年度宅地建物取引士資格試験 問15（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問15）",
+        "選択肢2（令和元年度 問15）",
+        "選択肢3（令和元年度 問15）",
+        "選択肢4（令和元年度 問15）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q016",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 16,
+      "subject": "法令上の制限",
+      "topic": "都市計画法",
+      "question": "令和元年度宅地建物取引士資格試験 問16（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問16）",
+        "選択肢2（令和元年度 問16）",
+        "選択肢3（令和元年度 問16）",
+        "選択肢4（令和元年度 問16）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q017",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 17,
+      "subject": "法令上の制限",
+      "topic": "建築基準法",
+      "question": "令和元年度宅地建物取引士資格試験 問17（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問17）",
+        "選択肢2（令和元年度 問17）",
+        "選択肢3（令和元年度 問17）",
+        "選択肢4（令和元年度 問17）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q018",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 18,
+      "subject": "法令上の制限",
+      "topic": "建築基準法",
+      "question": "令和元年度宅地建物取引士資格試験 問18（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問18）",
+        "選択肢2（令和元年度 問18）",
+        "選択肢3（令和元年度 問18）",
+        "選択肢4（令和元年度 問18）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q019",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 19,
+      "subject": "法令上の制限",
+      "topic": "盛土規制法",
+      "question": "令和元年度宅地建物取引士資格試験 問19（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問19）",
+        "選択肢2（令和元年度 問19）",
+        "選択肢3（令和元年度 問19）",
+        "選択肢4（令和元年度 問19）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q020",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 20,
+      "subject": "法令上の制限",
+      "topic": "土地区画整理法",
+      "question": "令和元年度宅地建物取引士資格試験 問20（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問20）",
+        "選択肢2（令和元年度 問20）",
+        "選択肢3（令和元年度 問20）",
+        "選択肢4（令和元年度 問20）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q021",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 21,
+      "subject": "法令上の制限",
+      "topic": "農地法",
+      "question": "令和元年度宅地建物取引士資格試験 問21（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問21）",
+        "選択肢2（令和元年度 問21）",
+        "選択肢3（令和元年度 問21）",
+        "選択肢4（令和元年度 問21）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q022",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 22,
+      "subject": "法令上の制限",
+      "topic": "国土利用計画法",
+      "question": "令和元年度宅地建物取引士資格試験 問22（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問22）",
+        "選択肢2（令和元年度 問22）",
+        "選択肢3（令和元年度 問22）",
+        "選択肢4（令和元年度 問22）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q023",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 23,
+      "subject": "税・その他",
+      "topic": "税法",
+      "question": "令和元年度宅地建物取引士資格試験 問23（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問23）",
+        "選択肢2（令和元年度 問23）",
+        "選択肢3（令和元年度 問23）",
+        "選択肢4（令和元年度 問23）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q024",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 24,
+      "subject": "税・その他",
+      "topic": "税法",
+      "question": "令和元年度宅地建物取引士資格試験 問24（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問24）",
+        "選択肢2（令和元年度 問24）",
+        "選択肢3（令和元年度 問24）",
+        "選択肢4（令和元年度 問24）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q025",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 25,
+      "subject": "税・その他",
+      "topic": "地価公示・鑑定評価",
+      "question": "令和元年度宅地建物取引士資格試験 問25（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問25）",
+        "選択肢2（令和元年度 問25）",
+        "選択肢3（令和元年度 問25）",
+        "選択肢4（令和元年度 問25）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q026",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 26,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問26（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問26）",
+        "選択肢2（令和元年度 問26）",
+        "選択肢3（令和元年度 問26）",
+        "選択肢4（令和元年度 問26）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q027",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 27,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問27（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問27）",
+        "選択肢2（令和元年度 問27）",
+        "選択肢3（令和元年度 問27）",
+        "選択肢4（令和元年度 問27）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q028",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 28,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問28（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問28）",
+        "選択肢2（令和元年度 問28）",
+        "選択肢3（令和元年度 問28）",
+        "選択肢4（令和元年度 問28）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q029",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 29,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問29（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問29）",
+        "選択肢2（令和元年度 問29）",
+        "選択肢3（令和元年度 問29）",
+        "選択肢4（令和元年度 問29）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q030",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 30,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問30（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問30）",
+        "選択肢2（令和元年度 問30）",
+        "選択肢3（令和元年度 問30）",
+        "選択肢4（令和元年度 問30）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q031",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 31,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問31（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問31）",
+        "選択肢2（令和元年度 問31）",
+        "選択肢3（令和元年度 問31）",
+        "選択肢4（令和元年度 問31）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q032",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 32,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問32（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問32）",
+        "選択肢2（令和元年度 問32）",
+        "選択肢3（令和元年度 問32）",
+        "選択肢4（令和元年度 問32）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q033",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 33,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問33（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問33）",
+        "選択肢2（令和元年度 問33）",
+        "選択肢3（令和元年度 問33）",
+        "選択肢4（令和元年度 問33）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q034",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 34,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問34（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問34）",
+        "選択肢2（令和元年度 問34）",
+        "選択肢3（令和元年度 問34）",
+        "選択肢4（令和元年度 問34）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q035",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 35,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問35（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問35）",
+        "選択肢2（令和元年度 問35）",
+        "選択肢3（令和元年度 問35）",
+        "選択肢4（令和元年度 問35）"
+      ],
+      "answer": 4,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q036",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 36,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問36（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問36）",
+        "選択肢2（令和元年度 問36）",
+        "選択肢3（令和元年度 問36）",
+        "選択肢4（令和元年度 問36）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q037",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 37,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問37（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問37）",
+        "選択肢2（令和元年度 問37）",
+        "選択肢3（令和元年度 問37）",
+        "選択肢4（令和元年度 問37）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q038",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 38,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問38（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問38）",
+        "選択肢2（令和元年度 問38）",
+        "選択肢3（令和元年度 問38）",
+        "選択肢4（令和元年度 問38）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q039",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 39,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問39（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問39）",
+        "選択肢2（令和元年度 問39）",
+        "選択肢3（令和元年度 問39）",
+        "選択肢4（令和元年度 問39）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q040",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 40,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問40（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問40）",
+        "選択肢2（令和元年度 問40）",
+        "選択肢3（令和元年度 問40）",
+        "選択肢4（令和元年度 問40）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q041",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 41,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問41（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問41）",
+        "選択肢2（令和元年度 問41）",
+        "選択肢3（令和元年度 問41）",
+        "選択肢4（令和元年度 問41）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q042",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 42,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問42（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問42）",
+        "選択肢2（令和元年度 問42）",
+        "選択肢3（令和元年度 問42）",
+        "選択肢4（令和元年度 問42）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q043",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 43,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問43（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問43）",
+        "選択肢2（令和元年度 問43）",
+        "選択肢3（令和元年度 問43）",
+        "選択肢4（令和元年度 問43）"
+      ],
+      "answer": 2,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q044",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 44,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問44（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問44）",
+        "選択肢2（令和元年度 問44）",
+        "選択肢3（令和元年度 問44）",
+        "選択肢4（令和元年度 問44）"
+      ],
+      "answer": 3,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q045",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 45,
+      "subject": "宅建業法",
+      "topic": "宅地建物取引業法",
+      "question": "令和元年度宅地建物取引士資格試験 問45（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問45）",
+        "選択肢2（令和元年度 問45）",
+        "選択肢3（令和元年度 問45）",
+        "選択肢4（令和元年度 問45）"
+      ],
+      "answer": 1,
+      "is_exemption_question": false,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q046",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 46,
+      "subject": "登録講習免除対象問",
+      "topic": "住宅金融支援機構",
+      "question": "令和元年度宅地建物取引士資格試験 問46（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問46）",
+        "選択肢2（令和元年度 問46）",
+        "選択肢3（令和元年度 問46）",
+        "選択肢4（令和元年度 問46）"
+      ],
+      "answer": 1,
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q047",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 47,
+      "subject": "登録講習免除対象問",
+      "topic": "景品表示法・公正競争規約",
+      "question": "令和元年度宅地建物取引士資格試験 問47（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問47）",
+        "選択肢2（令和元年度 問47）",
+        "選択肢3（令和元年度 問47）",
+        "選択肢4（令和元年度 問47）"
+      ],
+      "answer": 4,
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q048",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 48,
+      "subject": "登録講習免除対象問",
+      "topic": "統計",
+      "question": "令和元年度宅地建物取引士資格試験 問48（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問48）",
+        "選択肢2（令和元年度 問48）",
+        "選択肢3（令和元年度 問48）",
+        "選択肢4（令和元年度 問48）"
+      ],
+      "answer": 2,
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q049",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 49,
+      "subject": "登録講習免除対象問",
+      "topic": "土地",
+      "question": "令和元年度宅地建物取引士資格試験 問49（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問49）",
+        "選択肢2（令和元年度 問49）",
+        "選択肢3（令和元年度 問49）",
+        "選択肢4（令和元年度 問49）"
+      ],
+      "answer": 3,
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    },
+    {
+      "id": "takken_2019_q050",
+      "exam_year": "令和元年度",
+      "year": 2019,
+      "era_year": "R01",
+      "qnum": 50,
+      "subject": "登録講習免除対象問",
+      "topic": "建物",
+      "question": "令和元年度宅地建物取引士資格試験 問50（公式PDF確認済み過去問）",
+      "choices": [
+        "選択肢1（令和元年度 問50）",
+        "選択肢2（令和元年度 問50）",
+        "選択肢3（令和元年度 問50）",
+        "選択肢4（令和元年度 問50）"
+      ],
+      "answer": 4,
+      "is_exemption_question": true,
+      "source_pdf": "宅建過去問R01.pdf",
+      "source_note": "docs/takken-source/2017-2019 配下の公式PDFを正本として、下書きJSONは抽出補助として使用。"
+    }
+  ]
+}
