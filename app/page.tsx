@@ -9,13 +9,13 @@ const primaryCtas = [
 const learningMenus = [
   {
     title: "年度別演習",
-    description: "令和7年度〜平成29年度まで、試験回ごとに順番で確認できます。",
+    description: "令和7年度〜平成25年度まで、試験回ごとに順番で確認できます。",
     href: "/practice",
     linkLabel: "年度別で解く",
   },
   {
     title: "全年度ランダム50問",
-    description: "収録済み550問から、未出題を優先して50問を出題します。",
+    description: "収録済み750問から、未出題を優先して50問を出題します。",
     href: "/practice",
     linkLabel: "ランダム演習へ",
   },
@@ -39,7 +39,7 @@ const learningMenus = [
   },
   {
     title: "収録済み過去問一覧",
-    description: "現在収録している11試験回分・550問の状況を確認できます。",
+    description: "現在収録している15試験回分・750問の状況を確認できます。",
     href: "/past",
     linkLabel: "収録状況を見る",
   },
@@ -52,9 +52,9 @@ const usageSteps = [
 ];
 
 const collectionStats = [
-  { label: "収録試験", value: "11回分" },
-  { label: "収録問題数", value: "550問" },
-  { label: "対象", value: "令和7年度〜平成29年度" },
+  { label: "収録試験", value: "15回分" },
+  { label: "収録問題数", value: "750問" },
+  { label: "対象", value: "令和7年度〜平成25年度" },
 ];
 
 export default function Home() {
@@ -66,7 +66,7 @@ export default function Home() {
             <p className="eyebrow">宅建士の過去問演習サイト</p>
             <h1>宅建過去問演習サイト</h1>
             <p className="hero-text">
-              令和7年度〜平成29年度までの過去問を、年度別・ランダム・科目別・ひっかけ対策・復習で確認できます。
+              令和7年度〜平成25年度までの過去問を、年度別・ランダム・科目別・ひっかけ対策・復習で確認できます。
             </p>
             <div className="hero-actions" aria-label="主要な学習メニュー">
               {primaryCtas.map((cta) => (
@@ -78,9 +78,9 @@ export default function Home() {
           </div>
           <div className="hero-panel hero-image-ready" aria-label="収録状況">
             <span className="status-badge">収録状況</span>
-            <h2>11試験回分・550問を収録</h2>
+            <h2>15試験回分・750問を収録</h2>
             <p>
-              現在は、令和7年度〜平成29年度までの11試験回分・550問を収録しています。
+              現在は、令和7年度〜平成25年度までの15試験回分・750問を収録しています。
             </p>
             <dl className="stats-list">
               {collectionStats.map((stat) => (

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const nextPlans = [
-  "H31/H30以前の過去問データを段階的に追加予定です。",
+  "平成24年度以前の過去問データを段階的に追加予定です。",
   "科目別演習や弱点分析などは今後の拡張候補です。",
 ];
 
@@ -25,11 +25,11 @@ export default function PastPage() {
           <p className="eyebrow">Past questions</p>
           <h1>宅建過去問一覧</h1>
           <p>
-            現在は令和7年度〜平成29年度までの宅建過去問データを11試験回分収録済みです。収録試験ごとの状況と、
+            現在は令和7年度〜平成25年度までの宅建過去問データを15試験回分収録済みです。収録試験ごとの状況と、
             登録講習免除対象問の有無を確認できます。
           </p>
         </div>
-        <span className="status-badge">11試験回分・550問を収録済み</span>
+        <span className="status-badge">15試験回分・750問を収録済み</span>
       </div>
 
       <section className="section-block" aria-labelledby="past-status-heading">

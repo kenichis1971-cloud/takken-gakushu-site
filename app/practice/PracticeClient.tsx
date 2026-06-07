@@ -194,7 +194,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
             <p className="eyebrow">Practice</p>
             <h1>宅建過去問演習</h1>
             <p>
-              11試験回分の過去問を問1から問50まで順番に解くか、収録済み550問からランダム50問を解けます。
+              15試験回分の過去問を問1から問50まで順番に解くか、収録済み750問からランダム50問を解けます。
             </p>
           </div>
           <span className="status-badge">年度別順番演習 / ランダム演習</span>
