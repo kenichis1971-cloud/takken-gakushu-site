@@ -7,7 +7,10 @@ import {
   isCorrectAnswer,
   isCorrectChoice,
 } from "../../lib/takkenAnswer";
-import type { TakkenPracticeQuestion, TakkenPracticeYear } from "../../lib/takkenPractice";
+import type {
+  TakkenPracticeQuestion,
+  TakkenPracticeYear,
+} from "../../lib/takkenPractice";
 import { saveWrongQuestion } from "../../lib/takkenReviewStorage";
 import {
   getTrapGroups,
@@ -63,12 +66,16 @@ function formatTrapTagLabels(question: TakkenPracticeQuestion) {
 }
 
 export function TrapsClient({ practiceYears }: TrapsClientProps) {
-  const [selectedSession, setSelectedSession] = useState<TrapSession | null>(null);
+  const [selectedSession, setSelectedSession] = useState<TrapSession | null>(
+    null,
+  );
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [answerRecords, setAnswerRecords] = useState<AnswerRecord[]>([]);
   const [isFinished, setIsFinished] = useState(false);
-  const [seenQuestionMap, setSeenQuestionMap] = useState<TakkenSeenQuestionMap>({});
+  const [seenQuestionMap, setSeenQuestionMap] = useState<TakkenSeenQuestionMap>(
+    {},
+  );
   const [isSeenQuestionMapLoaded, setIsSeenQuestionMapLoaded] = useState(false);
 
   const allPracticeQuestions = useMemo(
@@ -76,7 +83,10 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
     [practiceYears],
   );
   const trapGroups = useMemo(
-    () => getTrapGroups(allPracticeQuestions).filter((group) => group.questions.length > 0),
+    () =>
+      getTrapGroups(allPracticeQuestions).filter(
+        (group) => group.questions.length > 0,
+      ),
     [allPracticeQuestions],
   );
   const currentQuestion = selectedSession?.questions[questionIndex] ?? null;
@@ -100,8 +110,17 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
 
   function startTrapPractice(group: TakkenTrapGroup) {
     const currentSeenMap = getSeenQuestionMap();
-    const questions = pickQuestionsWithUnseenPriority(group.questions, getSessionQuestionCount(group), currentSeenMap);
-    const nextSeenMap = saveSeenQuestions(questions, "trap", undefined, group.id);
+    const questions = pickQuestionsWithUnseenPriority(
+      group.questions,
+      getSessionQuestionCount(group),
+      currentSeenMap,
+    );
+    const nextSeenMap = saveSeenQuestions(
+      questions,
+      "trap",
+      undefined,
+      group.id,
+    );
 
     setSeenQuestionMap(nextSeenMap);
 
@@ -118,7 +137,9 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
       return;
     }
 
-    const group = trapGroups.find((trapGroup) => trapGroup.id === selectedSession.trapType);
+    const group = trapGroups.find(
+      (trapGroup) => trapGroup.id === selectedSession.trapType,
+    );
 
     if (group) {
       startTrapPractice(group);
@@ -139,17 +160,28 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
     setIsFinished(false);
   }
 
-  function answerQuestion(question: TakkenPracticeQuestion, choiceNumber: number) {
+  function answerQuestion(
+    question: TakkenPracticeQuestion,
+    choiceNumber: number,
+  ) {
     if (selectedChoice !== null) {
       return;
     }
 
-    const isCorrect = isCorrectAnswer(choiceNumber, question.answer, question.specialScoring);
+    const isCorrect = isCorrectAnswer(
+      choiceNumber,
+      question.answer,
+      question.specialScoring,
+    );
 
     setSelectedChoice(choiceNumber);
 
     if (!isCorrect) {
-      saveWrongQuestion({ era: question.era, examId: question.examId, year: question.year }, question, choiceNumber);
+      saveWrongQuestion(
+        { era: question.era, examId: question.examId, year: question.year },
+        question,
+        choiceNumber,
+      );
     }
 
     setAnswerRecords((records) => [
@@ -178,73 +210,101 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
 
   if (!selectedSession) {
     return (
-      <article className="container practice-page traps-page">
-        <div className="practice-hero">
-          <div>
-            <p className="eyebrow">Traps</p>
-            <h1>ひっかけ問題演習</h1>
-            <p>
-              収録済み{allPracticeQuestions.length}問から、問題文・選択肢に含まれる表現をもとに、
-              宅建で間違えやすい条件・例外・数字表現を含む問題を抽出します。
-            </p>
-          </div>
-          <span className="status-badge">キーワード抽出・ランダム10問</span>
-        </div>
-
-        <section className="section-block" aria-labelledby="traps-select-heading">
-          <div className="section-heading compact-heading traps-heading">
+      <article className="practice-page practice-hero-page practice-hero-traps traps-page">
+        <section className="practice-hero" aria-labelledby="traps-page-heading">
+          <div className="container practice-hero-inner">
             <div>
-              <p className="eyebrow">Select trap type</p>
-              <h2 id="traps-select-heading">ひっかけタイプを選ぶ</h2>
-              <p>0件のタイプは表示せず、対象問題があるカードだけを表示しています。</p>
+              <p className="eyebrow">Traps</p>
+              <h1 id="traps-page-heading">ひっかけ問題演習</h1>
+              <p>
+                収録済み{allPracticeQuestions.length}
+                問から、問題文・選択肢に含まれる表現をもとに、
+                宅建で間違えやすい条件・例外・数字表現を含む問題を抽出します。
+              </p>
             </div>
-            <button className="button button-secondary" type="button" onClick={resetSeenQuestionHistory}>
-              出題済み履歴をリセット
-            </button>
-          </div>
-
-          <div className="practice-year-grid traps-grid">
-            {trapGroups.map((group) => {
-              const groupSeenStats = getSeenStats(group.questions, seenQuestionMap);
-              const sessionQuestionCount = getSessionQuestionCount(group);
-
-              return (
-                <section className="card practice-year-card traps-card" key={group.id}>
-                  <div className="practice-year-card-header">
-                    <h3>{group.name}</h3>
-                    <span>対象{group.questions.length}問</span>
-                  </div>
-                  <p>{group.description}</p>
-                  <dl
-                    className="seen-question-stats compact-seen-question-stats"
-                    aria-label={`${group.name}の出題済み履歴`}
-                  >
-                    <div>
-                      <dt>今回の出題数</dt>
-                      <dd>{sessionQuestionCount}問</dd>
-                    </div>
-                    <div>
-                      <dt>出題済み</dt>
-                      <dd>{isSeenQuestionMapLoaded ? `${groupSeenStats.seenCount}問` : "確認中"}</dd>
-                    </div>
-                    <div>
-                      <dt>未出題</dt>
-                      <dd>{isSeenQuestionMapLoaded ? `${groupSeenStats.unseenCount}問` : "確認中"}</dd>
-                    </div>
-                  </dl>
-                  <button
-                    className="button button-primary practice-start-button"
-                    disabled={group.questions.length === 0}
-                    type="button"
-                    onClick={() => startTrapPractice(group)}
-                  >
-                    このタイプを{sessionQuestionCount}問解く
-                  </button>
-                </section>
-              );
-            })}
+            <span className="status-badge">キーワード抽出・ランダム10問</span>
           </div>
         </section>
+
+        <div className="container practice-page-content">
+          <section
+            className="section-block"
+            aria-labelledby="traps-select-heading"
+          >
+            <div className="section-heading compact-heading traps-heading">
+              <div>
+                <p className="eyebrow">Select trap type</p>
+                <h2 id="traps-select-heading">ひっかけタイプを選ぶ</h2>
+                <p>
+                  0件のタイプは表示せず、対象問題があるカードだけを表示しています。
+                </p>
+              </div>
+              <button
+                className="button button-secondary"
+                type="button"
+                onClick={resetSeenQuestionHistory}
+              >
+                出題済み履歴をリセット
+              </button>
+            </div>
+
+            <div className="practice-year-grid traps-grid">
+              {trapGroups.map((group) => {
+                const groupSeenStats = getSeenStats(
+                  group.questions,
+                  seenQuestionMap,
+                );
+                const sessionQuestionCount = getSessionQuestionCount(group);
+
+                return (
+                  <section
+                    className="card practice-year-card traps-card"
+                    key={group.id}
+                  >
+                    <div className="practice-year-card-header">
+                      <h3>{group.name}</h3>
+                      <span>対象{group.questions.length}問</span>
+                    </div>
+                    <p>{group.description}</p>
+                    <dl
+                      className="seen-question-stats compact-seen-question-stats"
+                      aria-label={`${group.name}の出題済み履歴`}
+                    >
+                      <div>
+                        <dt>今回の出題数</dt>
+                        <dd>{sessionQuestionCount}問</dd>
+                      </div>
+                      <div>
+                        <dt>出題済み</dt>
+                        <dd>
+                          {isSeenQuestionMapLoaded
+                            ? `${groupSeenStats.seenCount}問`
+                            : "確認中"}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>未出題</dt>
+                        <dd>
+                          {isSeenQuestionMapLoaded
+                            ? `${groupSeenStats.unseenCount}問`
+                            : "確認中"}
+                        </dd>
+                      </div>
+                    </dl>
+                    <button
+                      className="button button-primary practice-start-button"
+                      disabled={group.questions.length === 0}
+                      type="button"
+                      onClick={() => startTrapPractice(group)}
+                    >
+                      このタイプを{sessionQuestionCount}問解く
+                    </button>
+                  </section>
+                );
+              })}
+            </div>
+          </section>
+        </div>
       </article>
     );
   }
@@ -255,7 +315,10 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
 
     return (
       <article className="container practice-page traps-page">
-        <section className="card practice-result" aria-labelledby="traps-result-heading">
+        <section
+          className="card practice-result"
+          aria-labelledby="traps-result-heading"
+        >
           <p className="eyebrow">Result</p>
           <h1 id="traps-result-heading">ひっかけ問題演習結果</h1>
           <dl className="practice-result-list">
@@ -281,10 +344,18 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
             </div>
           </dl>
           <div className="action-row">
-            <button className="button button-primary" type="button" onClick={restartCurrentSession}>
+            <button
+              className="button button-primary"
+              type="button"
+              onClick={restartCurrentSession}
+            >
               同じタイプをもう一度解く
             </button>
-            <button className="button button-secondary" type="button" onClick={returnToTrapSelection}>
+            <button
+              className="button button-secondary"
+              type="button"
+              onClick={returnToTrapSelection}
+            >
               ひっかけ演習選択に戻る
             </button>
           </div>
@@ -299,7 +370,11 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
         <section className="card practice-result">
           <h1>問題を表示できませんでした</h1>
           <p>ひっかけ演習選択に戻って、もう一度選択してください。</p>
-          <button className="button button-primary" type="button" onClick={returnToTrapSelection}>
+          <button
+            className="button button-primary"
+            type="button"
+            onClick={returnToTrapSelection}
+          >
             ひっかけ演習選択に戻る
           </button>
         </section>
@@ -309,9 +384,20 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
 
   const isAnswered = selectedChoice !== null;
   const isCorrect =
-    selectedChoice !== null && isCorrectAnswer(selectedChoice, currentQuestion.answer, currentQuestion.specialScoring);
-  const answerChoiceText = getCorrectAnswerChoiceText(currentQuestion.choices, currentQuestion.answer);
-  const formattedAnswer = formatCorrectAnswer(currentQuestion.answer, currentQuestion.specialScoring);
+    selectedChoice !== null &&
+    isCorrectAnswer(
+      selectedChoice,
+      currentQuestion.answer,
+      currentQuestion.specialScoring,
+    );
+  const answerChoiceText = getCorrectAnswerChoiceText(
+    currentQuestion.choices,
+    currentQuestion.answer,
+  );
+  const formattedAnswer = formatCorrectAnswer(
+    currentQuestion.answer,
+    currentQuestion.specialScoring,
+  );
   const trapTagLabels = formatTrapTagLabels(currentQuestion);
 
   return (
@@ -324,12 +410,19 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
             進捗：{questionIndex + 1} / {selectedSession.questions.length}
           </p>
         </div>
-        <button className="button button-secondary" type="button" onClick={returnToTrapSelection}>
+        <button
+          className="button button-secondary"
+          type="button"
+          onClick={returnToTrapSelection}
+        >
           ひっかけ演習選択に戻る
         </button>
       </div>
 
-      <section className="card practice-question-card" aria-labelledby="traps-question-heading">
+      <section
+        className="card practice-question-card"
+        aria-labelledby="traps-question-heading"
+      >
         <div className="practice-meta-row">
           <span>{currentQuestion.era}</span>
           <span>{currentQuestion.year}年</span>
@@ -342,7 +435,9 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
               {label}
             </span>
           ))}
-          {currentQuestion.isExemptionQuestion ? <span>登録講習免除対象問</span> : null}
+          {currentQuestion.isExemptionQuestion ? (
+            <span>登録講習免除対象問</span>
+          ) : null}
         </div>
         <h2 id="traps-question-heading">問題文</h2>
         <p className="practice-question-text">{currentQuestion.question}</p>
@@ -351,7 +446,11 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
           {currentQuestion.choices.map((choice, index) => {
             const choiceNumber = index + 1;
             const isSelected = selectedChoice === choiceNumber;
-            const isAnswer = isCorrectChoice(choiceNumber, currentQuestion.answer, currentQuestion.specialScoring);
+            const isAnswer = isCorrectChoice(
+              choiceNumber,
+              currentQuestion.answer,
+              currentQuestion.specialScoring,
+            );
             const resultClass = isAnswered
               ? isAnswer
                 ? " practice-choice-correct"
@@ -368,7 +467,9 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
                 type="button"
                 onClick={() => answerQuestion(currentQuestion, choiceNumber)}
               >
-                <span className="practice-choice-number">{getChoiceLabel(index)}</span>
+                <span className="practice-choice-number">
+                  {getChoiceLabel(index)}
+                </span>
                 <span>{choice}</span>
               </button>
             );
@@ -378,15 +479,25 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
         {isAnswered ? (
           <div
             className={`practice-answer-box ${
-              isCorrect ? "practice-answer-correct" : "practice-answer-incorrect"
+              isCorrect
+                ? "practice-answer-correct"
+                : "practice-answer-incorrect"
             }`}
           >
-            <p className="practice-answer-title">{isCorrect ? "正解" : "不正解"}</p>
+            <p className="practice-answer-title">
+              {isCorrect ? "正解" : "不正解"}
+            </p>
             <p>
               正解番号：{formattedAnswer} / {answerChoiceText}
             </p>
-            <button className="button button-primary" type="button" onClick={goToNextQuestion}>
-              {questionIndex >= selectedSession.questions.length - 1 ? "結果を見る" : "次の問題へ"}
+            <button
+              className="button button-primary"
+              type="button"
+              onClick={goToNextQuestion}
+            >
+              {questionIndex >= selectedSession.questions.length - 1
+                ? "結果を見る"
+                : "次の問題へ"}
             </button>
           </div>
         ) : null}
