@@ -222,7 +222,15 @@ export function TrapsClient({ practiceYears }: TrapsClientProps) {
                 宅建で間違えやすい条件・例外・数字表現を含む問題を抽出します。
               </p>
             </div>
-            <span className="status-badge">キーワード抽出・ランダム10問</span>
+            <div
+              className="learning-hero-panel"
+              aria-label="ひっかけ対策の補足"
+            >
+              <span className="status-badge">ひっかけ対策</span>
+              <p>
+                迷いやすい表現や選択肢の違いに注意しながら、ひっかけ問題を練習できます。
+              </p>
+            </div>
           </div>
         </section>
 

@@ -306,9 +306,13 @@ export function ReviewClient() {
               通常演習で間違えた問題をこの端末のブラウザに保存し、後から解き直せます。
             </p>
           </div>
-          <span className="status-badge">
-            保存件数：{isLoaded ? wrongQuestions.length : "確認中"}件
-          </span>
+          <div className="learning-hero-panel" aria-label="復習機能の補足">
+            <span className="status-badge">復習</span>
+            <p>
+              間違えた問題を保存し、あとから見直して理解を定着させやすくします。
+              保存件数：{isLoaded ? wrongQuestions.length : "確認中"}件
+            </p>
+          </div>
         </div>
       </section>
 

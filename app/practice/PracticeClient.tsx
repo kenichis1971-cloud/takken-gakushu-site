@@ -225,7 +225,12 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
                 15試験回分の過去問を問1から問50まで順番に解くか、収録済み750問からランダム50問を解けます。
               </p>
             </div>
-            <span className="status-badge">年度別順番演習 / ランダム演習</span>
+            <div className="learning-hero-panel" aria-label="過去問演習の補足">
+              <span className="status-badge">過去問演習</span>
+              <p>
+                年度別・ランダムで過去問を解きながら、現在の理解度を確認できます。
+              </p>
+            </div>
           </div>
         </section>
 

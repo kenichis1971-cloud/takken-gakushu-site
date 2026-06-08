@@ -29,7 +29,12 @@ export default function AdvertisingPage() {
               当サイトにおける広告リンク・PRリンクの掲載方針と、宅建講座・学習サービスに関する情報の位置づけをまとめています。
             </p>
           </div>
-          <span className="status-badge">透明性と方針のご案内</span>
+          <div className="learning-hero-panel" aria-label="広告・PR方針の補足">
+            <span className="status-badge">広告・PR方針</span>
+            <p>
+              広告やPR表記の考え方を整理し、透明性のあるサイト運営を目指します。
+            </p>
+          </div>
         </div>
       </section>
 

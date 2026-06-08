@@ -28,7 +28,12 @@ export default function PastPage() {
               登録講習免除対象問の有無を確認できます。
             </p>
           </div>
-          <span className="status-badge">15試験回分・750問を収録済み</span>
+          <div className="learning-hero-panel" aria-label="収録状況の補足">
+            <span className="status-badge">収録状況</span>
+            <p>
+              令和7年度から平成25年度までの15試験回分・750問を収録しています。年度別の収録状況と登録講習免除対象問を確認できます。
+            </p>
+          </div>
         </div>
       </section>
 

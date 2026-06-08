@@ -305,7 +305,10 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
                 問を科目別に集計し、苦手科目を集中して10問ずつ解けます。
               </p>
             </div>
-            <span className="status-badge">科目別・弱点対策</span>
+            <div className="learning-hero-panel" aria-label="科目別演習の補足">
+              <span className="status-badge">科目別演習</span>
+              <p>権利関係・宅建業法など、科目ごとに重点的に演習できます。</p>
+            </div>
           </div>
         </section>
 
