@@ -28,7 +28,12 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   line-height: 1.75;
 }
 
@@ -112,7 +117,9 @@ a {
 .site-utility-nav a,
 .site-footer nav a {
   border-radius: 999px;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 }
 
 .site-nav a {
@@ -143,7 +150,11 @@ a {
 .hero {
   padding: 76px 0 56px;
   background:
-    radial-gradient(circle at top left, rgba(47, 128, 237, 0.18), transparent 34%),
+    radial-gradient(
+      circle at top left,
+      rgba(47, 128, 237, 0.18),
+      transparent 34%
+    ),
     linear-gradient(180deg, #ffffff 0%, var(--background) 100%);
 }
 
@@ -167,7 +178,12 @@ a {
   isolation: isolate;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(11, 42, 74, 0.72) 0%, rgba(11, 42, 74, 0.44) 46%, rgba(20, 94, 168, 0.22) 100%),
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.72) 0%,
+      rgba(11, 42, 74, 0.44) 46%,
+      rgba(20, 94, 168, 0.22) 100%
+    ),
     url("/images/heroes/takken-top-hero-pc.jpg") center / cover no-repeat;
 }
 
@@ -287,7 +303,10 @@ h3 {
   border: 1px solid transparent;
   border-radius: 999px;
   font-weight: 800;
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
 }
 
 .button:hover,
@@ -313,7 +332,11 @@ h3 {
   border-color: #b7d3f2;
   color: var(--primary);
   box-shadow: 0 10px 22px rgba(20, 94, 168, 0.12);
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
 }
 
 .hero-actions .button-secondary:hover,
@@ -395,7 +418,9 @@ h3 {
 .link-card {
   min-height: 190px;
   box-shadow: none;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .link-card:hover {
@@ -750,7 +775,12 @@ h3 {
 
   .top-hero {
     background:
-      linear-gradient(180deg, rgba(11, 42, 74, 0.7) 0%, rgba(11, 42, 74, 0.46) 55%, rgba(20, 94, 168, 0.24) 100%),
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.7) 0%,
+        rgba(11, 42, 74, 0.46) 55%,
+        rgba(20, 94, 168, 0.24) 100%
+      ),
       url("/images/heroes/takken-top-hero-sp.jpg") center / cover no-repeat;
   }
 }
@@ -962,7 +992,10 @@ h3 {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   cursor: pointer;
-  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .practice-choice-button:hover:not(:disabled) {
@@ -1091,8 +1124,267 @@ h3 {
   }
 }
 
+.practice-hero-page,
+.past-hero-page {
+  padding: 0 0 76px;
+}
+
+.practice-page-content,
+.past-page-content,
+.advertising-page-content {
+  padding-top: 34px;
+}
+
+.practice-hero-page .practice-hero,
+.past-hero-page .past-hero,
+.advertising-hero-page .advertising-hero {
+  position: relative;
+  display: flex;
+  min-height: var(--site-hero-height-desktop);
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.practice-hero-inner,
+.past-hero-inner,
+.advertising-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.practice-hero-page .practice-hero h1,
+.past-hero-page .past-hero h1,
+.advertising-hero-page .advertising-hero h1 {
+  max-width: 10em;
+  color: #ffffff;
+  font-size: var(--site-hero-title-size-desktop);
+  line-height: var(--site-hero-title-line-height);
+  letter-spacing: var(--site-hero-title-letter-spacing);
+  text-wrap: balance;
+}
+
+.practice-hero-page .practice-hero .eyebrow,
+.practice-hero-page .practice-hero p:not(.eyebrow),
+.past-hero-page .past-hero .eyebrow,
+.past-hero-page .past-hero p:not(.eyebrow),
+.advertising-hero-page .advertising-hero .eyebrow,
+.advertising-hero-page .advertising-hero p:not(.eyebrow) {
+  color: #ffffff;
+}
+
+.practice-hero-page .practice-hero p:not(.eyebrow),
+.past-hero-page .past-hero p:not(.eyebrow),
+.advertising-hero-page .advertising-hero p:not(.eyebrow) {
+  max-width: 800px;
+  text-shadow: 0 2px 14px rgba(11, 42, 74, 0.46);
+}
+
+.practice-hero-page .practice-hero > .container > div,
+.past-hero-page .past-hero > .container > div,
+.advertising-hero-page .advertising-hero > .container > div {
+  text-shadow: 0 2px 14px rgba(11, 42, 74, 0.4);
+}
+
+.learning-hero-panel {
+  display: flex;
+  width: min(100%, 360px);
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius);
+  background: rgba(11, 42, 74, 0.68);
+  box-shadow: 0 18px 45px rgba(11, 42, 74, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.learning-hero-panel .status-badge {
+  background: rgba(47, 128, 237, 0.22);
+  color: #ffffff;
+}
+
+.learning-hero-panel p {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.practice-hero-practice .practice-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.74) 0%,
+      rgba(11, 42, 74, 0.46) 48%,
+      rgba(20, 94, 168, 0.22) 100%
+    ),
+    url("/images/heroes/takken-practice-hero-pc.jpg") center / cover no-repeat;
+}
+
+.practice-hero-weakness .practice-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.74) 0%,
+      rgba(11, 42, 74, 0.46) 48%,
+      rgba(20, 94, 168, 0.22) 100%
+    ),
+    url("/images/heroes/takken-weakness-hero-pc.jpg") center / cover no-repeat;
+}
+
+.practice-hero-traps .practice-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.74) 0%,
+      rgba(11, 42, 74, 0.46) 48%,
+      rgba(20, 94, 168, 0.22) 100%
+    ),
+    url("/images/heroes/takken-traps-hero-pc.jpg") center / cover no-repeat;
+}
+
+.practice-hero-review .practice-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.74) 0%,
+      rgba(11, 42, 74, 0.46) 48%,
+      rgba(20, 94, 168, 0.22) 100%
+    ),
+    url("/images/heroes/takken-review-hero-pc.jpg") center / cover no-repeat;
+}
+
+.past-hero-past .past-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.74) 0%,
+      rgba(11, 42, 74, 0.46) 48%,
+      rgba(20, 94, 168, 0.22) 100%
+    ),
+    url("/images/heroes/takken-past-hero-pc.jpg") center / cover no-repeat;
+}
+
+.advertising-page {
+  max-width: none;
+  padding: 0 0 76px;
+}
+
+.advertising-hero-page .advertising-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.76) 0%,
+      rgba(11, 42, 74, 0.5) 48%,
+      rgba(20, 94, 168, 0.24) 100%
+    ),
+    url("/images/heroes/takken-advertising-hero-pc.jpg") center / cover
+      no-repeat;
+}
+
+@media (max-width: 900px) {
+  .practice-hero-inner,
+  .past-hero-inner,
+  .advertising-hero-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .practice-hero-page .practice-hero,
+  .past-hero-page .past-hero,
+  .advertising-hero-page .advertising-hero {
+    min-height: 620px;
+  }
+
+  .practice-hero-page .practice-hero h1,
+  .past-hero-page .past-hero h1,
+  .advertising-hero-page .advertising-hero h1 {
+    font-size: clamp(2.1rem, 11vw, 3.2rem);
+  }
+
+  .practice-hero-practice .practice-hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.72) 0%,
+        rgba(11, 42, 74, 0.44) 58%,
+        rgba(20, 94, 168, 0.24) 100%
+      ),
+      url("/images/heroes/takken-practice-hero-sp.jpg") center / cover no-repeat;
+  }
+
+  .practice-hero-weakness .practice-hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.72) 0%,
+        rgba(11, 42, 74, 0.44) 58%,
+        rgba(20, 94, 168, 0.24) 100%
+      ),
+      url("/images/heroes/takken-weakness-hero-sp.jpg") center / cover no-repeat;
+  }
+
+  .practice-hero-traps .practice-hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.72) 0%,
+        rgba(11, 42, 74, 0.44) 58%,
+        rgba(20, 94, 168, 0.24) 100%
+      ),
+      url("/images/heroes/takken-traps-hero-sp.jpg") center / cover no-repeat;
+  }
+
+  .practice-hero-review .practice-hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.72) 0%,
+        rgba(11, 42, 74, 0.44) 58%,
+        rgba(20, 94, 168, 0.24) 100%
+      ),
+      url("/images/heroes/takken-review-hero-sp.jpg") center / cover no-repeat;
+  }
+
+  .past-hero-past .past-hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.72) 0%,
+        rgba(11, 42, 74, 0.44) 58%,
+        rgba(20, 94, 168, 0.24) 100%
+      ),
+      url("/images/heroes/takken-past-hero-sp.jpg") center / cover no-repeat;
+  }
+
+  .advertising-hero-page .advertising-hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.74) 0%,
+        rgba(11, 42, 74, 0.48) 58%,
+        rgba(20, 94, 168, 0.28) 100%
+      ),
+      url("/images/heroes/takken-advertising-hero-sp.jpg") center / cover
+        no-repeat;
+  }
+}
+
 .review-page .practice-hero {
   margin-bottom: 28px;
+}
+
+.review-page.practice-hero-page .practice-hero {
+  margin-bottom: 0;
 }
 
 .review-storage-note {
@@ -1240,7 +1532,12 @@ h3 {
   isolation: isolate;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(11, 42, 74, 0.74) 0%, rgba(11, 42, 74, 0.46) 48%, rgba(20, 94, 168, 0.22) 100%),
+    linear-gradient(
+      90deg,
+      rgba(11, 42, 74, 0.74) 0%,
+      rgba(11, 42, 74, 0.46) 48%,
+      rgba(20, 94, 168, 0.22) 100%
+    ),
     url("/images/heroes/takken-courses-hero-pc.jpg") center / cover no-repeat;
 }
 
@@ -1376,11 +1673,15 @@ h3 {
   }
 }
 
-
 @media (max-width: 640px) {
   .courses-hero {
     background:
-      linear-gradient(180deg, rgba(11, 42, 74, 0.72) 0%, rgba(11, 42, 74, 0.44) 58%, rgba(20, 94, 168, 0.24) 100%),
+      linear-gradient(
+        180deg,
+        rgba(11, 42, 74, 0.72) 0%,
+        rgba(11, 42, 74, 0.44) 58%,
+        rgba(20, 94, 168, 0.24) 100%
+      ),
       url("/images/heroes/takken-courses-hero-sp.jpg") center / cover no-repeat;
   }
 }
