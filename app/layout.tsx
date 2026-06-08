@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | 宅建士学習サイト",
   },
   description:
-    "宅建士試験の過去問演習・復習・弱点対策・講座比較を進めるための学習サイトです。",
+    "宅建士試験の過去問演習・復習・弱点対策・講座選び前の整理に使える学習サイトです。",
 };
 
 const navItems = [
