@@ -16,11 +16,11 @@ export function PreparationPage({ eyebrow, title, lead, items }: PreparationPage
           <h1>{title}</h1>
           <p>{lead}</p>
         </div>
-        <span className="status-badge">準備中</span>
+        <span className="status-badge">案内</span>
       </div>
 
       <section className="card prep-card">
-        <h2>このページで予定していること</h2>
+        <h2>このページで確認できること</h2>
         <ul className="check-list">
           {items.map((item) => (
             <li key={item}>{item}</li>
