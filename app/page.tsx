@@ -58,6 +58,13 @@ const collectionStats = [
   { label: "対象", value: "令和7年度〜平成25年度" },
 ];
 
+const sidebarLearningMenus = [
+  { href: "/practice", label: "過去問演習" },
+  { href: "/past", label: "収録過去問一覧" },
+  { href: "/review", label: "間違えた問題の復習" },
+  { href: "/weakness", label: "弱点集中演習" },
+];
+
 export default function Home() {
   return (
     <>
@@ -98,77 +105,120 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="section-heading">
-            <p className="eyebrow">Learning menu</p>
-            <h2>今できる学習メニュー</h2>
+      <div className="container home-content-layout">
+        <main className="home-main-column">
+          <section className="section">
+            <div className="section-heading">
+              <p className="eyebrow">Learning menu</p>
+              <h2>今できる学習メニュー</h2>
+              <p>
+                過去問演習、科目別演習、ひっかけ対策、復習、収録過去問一覧、講座選びの整理ページへ、目的に合わせて移動できます。
+              </p>
+            </div>
+            <div className="card-grid cards-3">
+              {learningMenus.map((menu) => (
+                <article className="card menu-card" key={`${menu.title}-${menu.href}`}>
+                  <div>
+                    <h3>{menu.title}</h3>
+                    <p>{menu.description}</p>
+                  </div>
+                  <Link className="button button-secondary card-button" href={menu.href}>
+                    {menu.linkLabel}
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="section muted-section">
+            <div className="split-section">
+              <div>
+                <p className="eyebrow">How to use</p>
+                <h2>おすすめの使い方</h2>
+                <p>
+                  迷ったときの使い方の一例です。学習状況に合わせて、必要なメニューから始められます。
+                </p>
+              </div>
+              <ol className="step-list">
+                {usageSteps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            </div>
+          </section>
+
+          <section className="section">
+            <div className="course-note card">
+              <div>
+                <p className="eyebrow">Course guide</p>
+                <h2>宅建講座選びの整理ページ</h2>
+                <p>
+                  学習サービスや講座を比較する前に、見るポイントを整理するページです。外部リンクや広告リンクは設置せず、比較前の確認事項をまとめています。
+                </p>
+              </div>
+              <Link className="button button-secondary" href="/courses">
+                講座選びの整理を見る
+              </Link>
+            </div>
+          </section>
+
+          <section className="section home-disclosure-section">
+            <div className="disclosure-card">
+              <div>
+                <p className="eyebrow">Advertising / PR</p>
+                <h2>広告・PR方針について</h2>
+                <p>
+                  当サイトでは、将来的に宅建講座や学習サービスに関する広告・PRリンクを掲載する場合があります。掲載する場合は、広告・PRであることが分かる形で表示します。
+                </p>
+              </div>
+              <Link className="text-link" href="/advertising">
+                広告・PRについて
+              </Link>
+            </div>
+          </section>
+        </main>
+
+        <aside className="home-sidebar" aria-label="宅建サイトの補助メニュー">
+          <section className="sidebar-block sidebar-ad-slot" aria-label="広告・PR枠">
+            <p className="sidebar-kicker">広告・PR</p>
+            <div className="sidebar-banner-placeholder">
+              <span>300pxバナー対応枠</span>
+            </div>
             <p>
-              過去問演習、科目別演習、ひっかけ対策、復習、収録過去問一覧、講座選びの整理ページへ、目的に合わせて移動できます。
+              今後、宅建講座・教材・学習サービス等を紹介する場合があります。
             </p>
-          </div>
-          <div className="card-grid cards-3">
-            {learningMenus.map((menu) => (
-              <article className="card menu-card" key={`${menu.title}-${menu.href}`}>
-                <div>
-                  <h3>{menu.title}</h3>
-                  <p>{menu.description}</p>
-                </div>
-                <Link className="button button-secondary card-button" href={menu.href}>
-                  {menu.linkLabel}
+          </section>
+
+          <section className="sidebar-block">
+            <h2>宅建学習メニュー</h2>
+            <nav className="sidebar-menu" aria-label="宅建学習メニュー">
+              {sidebarLearningMenus.map((menu) => (
+                <Link className="sidebar-menu-link" href={menu.href} key={menu.href}>
+                  <span>{menu.label}</span>
+                  <span aria-hidden="true">▶▶</span>
                 </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+              ))}
+            </nav>
+          </section>
 
-      <section className="section muted-section">
-        <div className="container split-section">
-          <div>
-            <p className="eyebrow">How to use</p>
-            <h2>おすすめの使い方</h2>
+          <section className="sidebar-block sidebar-course-block">
+            <h2>講座選びの前に</h2>
             <p>
-              迷ったときの使い方の一例です。学習状況に合わせて、必要なメニューから始められます。
+              過去問演習で見えてきた苦手分野や学習ペースをもとに、講座・教材・学習サービスを検討する前の観点を整理できます。
             </p>
-          </div>
-          <ol className="step-list">
-            {usageSteps.map((step) => (
-              <li key={step}>{step}</li>
-            ))}
-          </ol>
-        </div>
-      </section>
+            <Link className="sidebar-outline-link" href="/courses">
+              講座選び前の整理
+            </Link>
+          </section>
 
-      <section className="section">
-        <div className="container course-note card">
-          <div>
-            <p className="eyebrow">Course guide</p>
-            <h2>宅建講座選びの整理ページ</h2>
-            <p>
-              学習サービスや講座を比較する前に、見るポイントを整理するページです。外部リンクや広告リンクは設置せず、比較前の確認事項をまとめています。
-            </p>
-          </div>
-          <Link className="button button-secondary" href="/courses">
-            講座選びの整理を見る
-          </Link>
-        </div>
-      </section>
-
-      <section className="section home-disclosure-section">
-        <div className="container disclosure-card">
-          <div>
-            <p className="eyebrow">Advertising / PR</p>
-            <h2>広告・PR方針について</h2>
-            <p>
-              当サイトでは、将来的に宅建講座や学習サービスに関する広告・PRリンクを掲載する場合があります。掲載する場合は、広告・PRであることが分かる形で表示します。
-            </p>
-          </div>
-          <Link className="text-link" href="/advertising">
-            広告・PRについて
-          </Link>
-        </div>
-      </section>
+          <section className="sidebar-block sidebar-pr-note">
+            <h2>広告・PR掲載について</h2>
+            <Link className="text-link" href="/advertising">
+              広告・PRについて
+            </Link>
+          </section>
+        </aside>
+      </div>
     </>
   );
 }
