@@ -721,26 +721,27 @@ h3 {
 
 .sidebar-block {
   padding: 16px;
-  border: 1px solid #c9d8e8;
+  border: 1px solid #c9d9b4;
   border-radius: 10px;
-  background: linear-gradient(180deg, #f8fbff 0%, #edf4fb 100%);
-  box-shadow: 0 10px 24px rgba(16, 38, 72, 0.08);
+  background: linear-gradient(180deg, #fbf7ea 0%, #eef8df 100%);
+  box-shadow: 0 10px 24px rgba(42, 86, 51, 0.1);
 }
 
 .sidebar-block h2 {
   margin: 0 0 12px;
+  color: #214f2d;
   font-size: 1.05rem;
 }
 
 .sidebar-block p {
   margin-bottom: 0;
-  color: var(--muted);
+  color: #526246;
   font-size: 0.9rem;
   line-height: 1.65;
 }
 
 .sidebar-kicker {
-  color: var(--primary-light) !important;
+  color: #2f6b3b !important;
   font-size: 0.78rem !important;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -752,11 +753,11 @@ h3 {
   min-height: 250px;
   margin: 10px 0 12px;
   place-items: center;
-  border: 1px dashed #9bb9d9;
+  border: 1px dashed #95b873;
   background:
-    linear-gradient(135deg, rgba(47, 128, 237, 0.12), rgba(255, 255, 255, 0.62)),
-    #f6faff;
-  color: #42627f;
+    linear-gradient(135deg, rgba(112, 163, 68, 0.16), rgba(255, 248, 232, 0.78)),
+    #f4f8e9;
+  color: #3f6130;
   font-size: 0.95rem;
   font-weight: 800;
   text-align: center;
@@ -774,14 +775,14 @@ h3 {
   justify-content: space-between;
   gap: 12px;
   padding: 10px 12px;
-  border: 1px solid #2f80ed;
+  border: 1px solid #3f7d43;
   border-radius: 8px;
-  background: linear-gradient(90deg, #145ea8 0%, #2f80ed 72%, #8ac0ff 100%);
+  background: linear-gradient(90deg, #1f5f34 0%, #3f8b4b 68%, #9fbe42 100%);
   color: #ffffff;
   font-size: 0.92rem;
   font-weight: 900;
   line-height: 1.35;
-  box-shadow: 0 8px 16px rgba(20, 94, 168, 0.18);
+  box-shadow: 0 8px 16px rgba(47, 107, 59, 0.18);
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
@@ -791,11 +792,12 @@ h3 {
 .sidebar-menu-link:hover {
   transform: translateY(-1px);
   filter: brightness(1.04);
-  box-shadow: 0 10px 20px rgba(20, 94, 168, 0.22);
+  box-shadow: 0 10px 20px rgba(47, 107, 59, 0.23);
 }
 
 .sidebar-course-block {
-  background: #f7fbff;
+  border-color: #d3c79e;
+  background: linear-gradient(180deg, #fffaf0 0%, #f1f8e7 100%);
 }
 
 .sidebar-outline-link {
@@ -806,17 +808,18 @@ h3 {
   min-height: 42px;
   margin-top: 14px;
   padding: 9px 12px;
-  border: 1px solid #9bb9d9;
+  border: 1px solid #91a75a;
   border-radius: 8px;
-  background: #ffffff;
-  color: var(--primary);
+  background: #fffdf5;
+  color: #24542f;
   font-size: 0.9rem;
   font-weight: 900;
 }
 
 .sidebar-pr-note {
   padding: 14px 16px;
-  background: #f4f8fc;
+  border-color: #d9cfa9;
+  background: #fbf5e6;
 }
 
 .sidebar-pr-note h2 {
