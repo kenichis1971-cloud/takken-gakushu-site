@@ -754,20 +754,26 @@ h3 {
   letter-spacing: 0.12em;
 }
 
-.sidebar-banner-placeholder {
+.sidebar-ad-slot {
   display: grid;
-  width: 100%;
-  min-height: 250px;
-  margin: 10px 0 12px;
-  place-items: center;
-  border: 1px dashed #95b873;
-  background:
-    linear-gradient(135deg, rgba(112, 163, 68, 0.16), rgba(255, 248, 232, 0.78)),
-    #f4f8e9;
-  color: #3f6130;
-  font-size: 0.95rem;
-  font-weight: 800;
-  text-align: center;
+  justify-items: center;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.sidebar-ad-slot a {
+  display: block;
+  line-height: 0;
+}
+
+.sidebar-ad-label {
+  margin: 6px 0 0 !important;
+  justify-self: start;
+  padding: 0 8px 8px;
+  color: #6b7280 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.08em;
 }
 
 .sidebar-menu {

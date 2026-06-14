@@ -180,13 +180,30 @@ export default function Home() {
 
         <aside className="home-sidebar" aria-label="宅建サイトの補助メニュー">
           <section className="sidebar-block sidebar-ad-slot" aria-label="広告・PR枠">
-            <p className="sidebar-kicker">広告・PR</p>
-            <div className="sidebar-banner-placeholder">
-              <span>300pxバナー対応枠</span>
-            </div>
-            <p>
-              今後、宅建講座・教材・学習サービス等を紹介する場合があります。
-            </p>
+            <a
+              href="https://af.moshimo.com/af/c/click?a_id=5629701&p_id=2380&pc_id=5164&pl_id=31430"
+              rel="nofollow sponsored noopener noreferrer"
+              referrerPolicy="no-referrer-when-downgrade"
+              target="_blank"
+            >
+              <img
+                src="https://image.moshimo.com/af-img/1854/000000031430.png"
+                alt="宅建講座の広告バナー"
+                width={300}
+                height={250}
+                loading="lazy"
+                style={{ border: "none", maxWidth: "100%", height: "auto" }}
+              />
+            </a>
+            <p className="sidebar-kicker sidebar-ad-label">広告・PR</p>
+            <img
+              src="https://i.moshimo.com/af/i/impression?a_id=5629701&p_id=2380&pc_id=5164&pl_id=31430"
+              alt=""
+              width={1}
+              height={1}
+              loading="lazy"
+              style={{ border: "none", width: "1px", height: "1px" }}
+            />
           </section>
 
           <section className="sidebar-block">
