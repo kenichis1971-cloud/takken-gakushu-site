@@ -13,9 +13,12 @@ import questions2022 from "../data/takken/past/2022_questions.json";
 import questions2023 from "../data/takken/past/2023_questions.json";
 import questions2024 from "../data/takken/past/2024_questions.json";
 import questions2025 from "../data/takken/past/2025_questions.json";
+import { isPlaceholderQuestion } from "./takkenQuestionPlaceholders";
 
 type TakkenPastQuestion = {
   qnum: number;
+  question?: string;
+  choices?: string[];
   is_exemption_question?: boolean;
 };
 
@@ -65,13 +68,14 @@ const pastQuestionSources: PastQuestionSource[] = [
 
 export function getTakkenPastQuestionSummaries(): TakkenPastQuestionSummary[] {
   return pastQuestionSources.map(({ data, era, examId }) => {
-    const exemptionQuestions = data.items.filter((item) => item.qnum >= 46 && item.qnum <= 50);
+    const questions = data.items.filter((item) => !isPlaceholderQuestion(item));
+    const exemptionQuestions = questions.filter((item) => item.qnum >= 46 && item.qnum <= 50);
 
     return {
       examId,
       era: data.era ?? era,
       year: data.year,
-      questionCount: data.items.length,
+      questionCount: questions.length,
       hasExemptionQuestions:
         exemptionQuestions.length === 5 && exemptionQuestions.every((item) => item.is_exemption_question === true),
     };
@@ -82,7 +86,7 @@ export function getTakkenPastQuestionTotals(
   summaries = getTakkenPastQuestionSummaries(),
 ): TakkenPastQuestionTotals {
   return {
-    examCount: summaries.length,
+    examCount: summaries.filter((summary) => summary.questionCount > 0).length,
     questionCount: summaries.reduce((total, summary) => total + summary.questionCount, 0),
   };
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { NO_AVAILABLE_QUESTIONS_MESSAGE } from "../../lib/takkenQuestionPlaceholders";
 import {
   formatCorrectAnswer,
   getCorrectAnswerChoiceText,
@@ -101,6 +102,10 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
   }
 
   function startPractice(year: TakkenPracticeYear) {
+    if (year.questions.length === 0) {
+      return;
+    }
+
     resetSession({
       mode: "year",
       title: year.era,
@@ -113,6 +118,10 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
   }
 
   function startRandomPractice() {
+    if (allPracticeQuestions.length === 0) {
+      return;
+    }
+
     const currentSeenMap = getSeenQuestionMap();
     const questions = pickQuestionsWithUnseenPriority(
       allPracticeQuestions,
@@ -222,7 +231,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
               <p className="eyebrow">Practice</p>
               <h1 id="practice-page-heading">宅建過去問演習</h1>
               <p>
-                15試験回分の過去問を問1から問50まで順番に解くか、収録済み750問からランダム50問を解けます。
+                出題可能な過去問を年度別に順番で解くか、収録済み{allPracticeQuestions.length}問からランダム50問を解けます。
               </p>
             </div>
             <div className="learning-hero-panel" aria-label="過去問演習の補足">
@@ -254,6 +263,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
                 問から、まだ出ていない問題を優先して50問出題します。
               </p>
               <p>年度をまたいで実戦形式で確認できます。</p>
+              {allPracticeQuestions.length === 0 ? <p>{NO_AVAILABLE_QUESTIONS_MESSAGE}</p> : null}
               <dl className="seen-question-stats" aria-label="出題済み履歴">
                 <div>
                   <dt>出題済み</dt>
@@ -285,6 +295,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
                 className="button button-primary practice-start-button"
                 type="button"
                 onClick={startRandomPractice}
+                disabled={allPracticeQuestions.length === 0}
               >
                 全年度ランダム50問を解く
               </button>
@@ -308,10 +319,12 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
                     <span>{year.year}年</span>
                   </div>
                   <p>{year.questionCount}問を qnum 順に表示します。</p>
+                  {year.questions.length === 0 ? <p>{NO_AVAILABLE_QUESTIONS_MESSAGE}</p> : null}
                   <button
                     className="button button-primary practice-start-button"
                     type="button"
                     onClick={() => startPractice(year)}
+                    disabled={year.questions.length === 0}
                   >
                     {year.era}を解く
                   </button>
@@ -397,7 +410,7 @@ export function PracticeClient({ practiceYears }: PracticeClientProps) {
       <article className="container practice-page">
         <section className="card practice-result">
           <h1>問題を表示できませんでした</h1>
-          <p>年度選択に戻って、もう一度選択してください。</p>
+          <p>{NO_AVAILABLE_QUESTIONS_MESSAGE}</p>
           <button
             className="button button-primary"
             type="button"
