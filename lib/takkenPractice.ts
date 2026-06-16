@@ -14,6 +14,7 @@ import questions2023 from "../data/takken/past/2023_questions.json";
 import questions2024 from "../data/takken/past/2024_questions.json";
 import questions2025 from "../data/takken/past/2025_questions.json";
 import type { TakkenAnswer, TakkenSpecialScoring } from "./takkenAnswer";
+import { isPlaceholderQuestion } from "./takkenQuestionPlaceholders";
 
 export type TakkenPracticeQuestion = {
   id: string;
@@ -108,6 +109,7 @@ export function getTakkenPracticeYears(): TakkenPracticeYear[] {
     const displayEra = data.era ?? era;
     const questions = data.items
       .map((question) => normalizePracticeQuestion(question, data.year, displayEra, examId))
+      .filter((question) => !isPlaceholderQuestion(question))
       .sort((current, next) => current.qnum - next.qnum);
 
     return {

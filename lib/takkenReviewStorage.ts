@@ -1,4 +1,5 @@
 import { isTakkenAnswer, type TakkenAnswer, type TakkenSpecialScoring } from "./takkenAnswer";
+import { isPlaceholderQuestion } from "./takkenQuestionPlaceholders";
 import type { TakkenPracticeQuestion, TakkenPracticeYear } from "./takkenPractice";
 
 export const TAKKEN_WRONG_QUESTIONS_STORAGE_KEY = "takken_wrong_questions_v1";
@@ -110,7 +111,12 @@ export function readWrongQuestions(): TakkenWrongQuestion[] {
       return [];
     }
 
-    return sortWrongQuestions(parsedValue.filter(isWrongQuestion).map(normalizeWrongQuestion));
+    return sortWrongQuestions(
+      parsedValue
+        .filter(isWrongQuestion)
+        .map(normalizeWrongQuestion)
+        .filter((question) => !isPlaceholderQuestion(question)),
+    );
   } catch {
     return [];
   }
@@ -145,6 +151,10 @@ export function saveWrongQuestion(
     is_exemption_question: question.isExemptionQuestion,
     savedAt: new Date().toISOString(),
   };
+
+  if (isPlaceholderQuestion(savedQuestion)) {
+    return;
+  }
 
   const otherQuestions = readWrongQuestions().filter((wrongQuestion) => wrongQuestion.id !== savedQuestion.id);
   writeWrongQuestions([...otherQuestions, savedQuestion]);

@@ -9,12 +9,10 @@ export const metadata: Metadata = {
   description: "宅建士試験の年度別過去問データ収録状況です。",
 };
 
-const currentStatusText =
-  "令和7年度から平成25年度までの15試験回分・750問を収録しています。収録済み過去問の確認と、年度別演習・ランダム演習へ進む前の一覧確認に利用できます。";
-
 export default function PastPage() {
   const summaries = getTakkenPastQuestionSummaries();
   const totals = getTakkenPastQuestionTotals(summaries);
+  const currentStatusText = `令和7年度から平成25年度までの過去問から、現在出題可能な${totals.examCount}試験回分・${totals.questionCount}問を表示しています。収録済み過去問の確認と、年度別演習・ランダム演習へ進む前の一覧確認に利用できます。`;
 
   return (
     <article className="past-page past-hero-page past-hero-past">
@@ -24,14 +22,14 @@ export default function PastPage() {
             <p className="eyebrow">Past questions</p>
             <h1 id="past-page-heading">宅建過去問一覧</h1>
             <p>
-              現在は令和7年度〜平成25年度までの宅建過去問データを15試験回分収録済みです。収録試験ごとの状況と、
+              現在は令和7年度〜平成25年度までの宅建過去問データから出題可能な問題を表示しています。収録試験ごとの状況と、
               登録講習免除対象問の有無を確認できます。
             </p>
           </div>
           <div className="learning-hero-panel" aria-label="収録状況の補足">
             <span className="status-badge">収録状況</span>
             <p>
-              令和7年度から平成25年度までの15試験回分・750問を収録しています。年度別の収録状況と登録講習免除対象問を確認できます。
+              令和7年度から平成25年度までの過去問から、出題可能な問題数と登録講習免除対象問を確認できます。
             </p>
           </div>
         </div>
@@ -83,7 +81,7 @@ export default function PastPage() {
               <dd>{totals.examCount}回分</dd>
             </div>
             <div>
-              <dt>収録問題数</dt>
+              <dt>出題可能問題数</dt>
               <dd>{totals.questionCount}問</dd>
             </div>
           </dl>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { NO_AVAILABLE_QUESTIONS_MESSAGE } from "../../lib/takkenQuestionPlaceholders";
 import {
   formatCorrectAnswer,
   getCorrectAnswerChoiceText,
@@ -373,6 +374,7 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
                         </dd>
                       </div>
                     </dl>
+                    {group.questions.length === 0 ? <p>{NO_AVAILABLE_QUESTIONS_MESSAGE}</p> : null}
                     <button
                       className="button button-primary practice-start-button"
                       disabled={group.questions.length === 0}
@@ -451,7 +453,7 @@ export function WeaknessClient({ practiceYears }: WeaknessClientProps) {
       <article className="container practice-page weakness-page">
         <section className="card practice-result">
           <h1>問題を表示できませんでした</h1>
-          <p>科目選択に戻って、もう一度選択してください。</p>
+          <p>{NO_AVAILABLE_QUESTIONS_MESSAGE}</p>
           <button
             className="button button-primary"
             type="button"
